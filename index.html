@@ -1,6 +1,14 @@
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>OKR 2026 → 2028 • Cássia</title>
+<meta name="description" content="Painel pessoal de OKR 2026 → 2028">
+<meta name="theme-color" content="#7c5cff">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="OKR">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f3f2fb;--card:rgba(255,255,255,.78);--tx:#14122b;--mut:#67647f;--ln:rgba(20,18,43,.1);--a:#7c5cff;--b:#ff5c8a;--c:#0ea5c6;--d:#10b981;--e:#f59e0b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -9,6 +17,8 @@
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;min-height:100%}
+html.conf body{zoom:1.1;line-height:1.7;letter-spacing:.02em;word-spacing:.1em}
+:focus-visible{outline:2px solid var(--a);outline-offset:2px}
 #fx{position:fixed;inset:0;z-index:0;pointer-events:none}
 .orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.35;z-index:0;animation:fl 18s ease-in-out infinite alternate}
 .o1{width:480px;height:480px;background:var(--a);top:-120px;left:-100px}
@@ -20,17 +30,18 @@ header{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-
 h1{margin:0;font-size:clamp(28px,5vw,48px);letter-spacing:-1px;background:linear-gradient(90deg,var(--a),var(--b),var(--c),var(--a));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 8s linear infinite}
 @keyframes sh{to{background-position:300%}}
 .sub{color:var(--mut);margin-top:4px;font-size:14px}
-.btns{display:flex;gap:8px}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
 button{font:inherit;cursor:pointer;color:var(--tx);background:var(--card);border:1px solid var(--ln);border-radius:999px;padding:8px 14px;backdrop-filter:blur(10px);transition:.25s}
 button:hover{transform:translateY(-2px);border-color:var(--a)}
-button.on{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;border-color:transparent}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+button.on,button[aria-pressed="true"]{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;border-color:transparent}
 .ban{font-size:13px;color:var(--mut);margin:0 0 14px;padding:8px 14px;border:1px dashed var(--ln);border-radius:12px}
 .g{display:grid;gap:14px;margin-bottom:14px}
 .k4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 .kr{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .card{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:18px;backdrop-filter:blur(16px);position:relative;overflow:hidden;animation:up .8s both;transition:transform .3s,box-shadow .3s}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px var(--x,var(--a))}
+.card:hover{box-shadow:0 18px 40px -18px var(--x,var(--a))}
 @keyframes up{from{opacity:0;transform:translateY(30px)}}
 h3{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
 .kpi{display:flex;align-items:center;gap:14px}
@@ -52,14 +63,18 @@ h3{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
 .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--x)}
 .pct{font-size:30px;font-weight:700;color:var(--x)}
 input[type=range]{width:100%;accent-color:var(--x)}
+.slw{position:relative;padding-top:8px}
+.slw .mm{position:absolute;top:2px;width:2px;height:10px;background:var(--x);opacity:.8;transform:translateX(-1px);pointer-events:none}
 svg text{fill:var(--mut);font:11px 'Space Grotesk',sans-serif}
 .rad polygon.p{fill:var(--a);fill-opacity:.28;stroke:var(--a);stroke-width:2.5;filter:drop-shadow(0 0 8px var(--a))}
 .rad .gr{fill:none;stroke:var(--ln)}
-.ln{fill:none;stroke:url(#lg);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dr 2s .3s forwards;filter:drop-shadow(0 0 6px var(--b))}
+.ln{fill:none;stroke:url(#lg);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px var(--b))}
+.dot{fill:var(--b)}
+.anim .ln{stroke-dasharray:1;stroke-dashoffset:1;animation:dr 2s .3s forwards}
 @keyframes dr{to{stroke-dashoffset:0}}
-.dot{fill:var(--b);animation:pop .5s both}
+.anim .dot{animation:pop .5s both}
 @keyframes pop{from{r:0;opacity:0}}
-.ar{opacity:0;animation:fi 1.5s 1.2s forwards}
+.anim .ar{opacity:0;animation:fi 1.5s 1.2s forwards}
 @keyframes fi{to{opacity:1}}
 .add{display:flex;gap:8px;margin-top:8px}
 .add input{flex:1;min-width:0;background:transparent;color:var(--tx);border:1px solid var(--ln);border-radius:10px;padding:7px 10px;font:inherit}
@@ -68,36 +83,102 @@ svg text{fill:var(--mut);font:11px 'Space Grotesk',sans-serif}
 .time i.pr{background:linear-gradient(90deg,var(--d),var(--e));top:auto;height:100%;opacity:.95}
 .mk{position:absolute;top:-22px;font-size:11px;transform:translateX(-50%);white-space:nowrap}
 .hm{display:grid;grid-template-columns:repeat(auto-fill,minmax(22px,1fr));gap:5px}
-.hm span{aspect-ratio:1;border-radius:6px;background:var(--ln);cursor:pointer;transition:.25s;animation:pop2 .5s both}
+.hm button{padding:0;border:0;border-radius:6px;aspect-ratio:1;background:var(--ln);backdrop-filter:none;position:relative;transition:transform .25s}
+.hm button:hover{transform:scale(1.25)}
+.hm.anim button{animation:pop2 .5s both}
 @keyframes pop2{from{transform:scale(0)}}
-.hm span:hover{transform:scale(1.25)}
-.hm .d{background:var(--d);box-shadow:0 0 10px var(--d);animation:pop2 .5s both,pu 2.5s infinite}
+.hm button.d{background:var(--d);box-shadow:0 0 10px var(--d)}
+html:not(.calm) .hm button.d{animation:pu 2.5s infinite}
 @keyframes pu{50%{box-shadow:0 0 2px var(--d)}}
-.hm .m{background:color-mix(in srgb,var(--b) 55%,transparent)}
+.hm button.m{background:color-mix(in srgb,var(--b) 55%,transparent)}
+.hm button.now{outline:2px solid var(--a);outline-offset:1px}
+.hm button.n:after{content:"";position:absolute;right:2px;top:2px;width:5px;height:5px;border-radius:50%;background:var(--tx)}
 .big{font-size:clamp(30px,6vw,52px);font-weight:700}
 .foot{text-align:center;color:var(--mut);font-size:12px;margin-top:24px}
+.wkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;align-items:start}
+.wkg small{color:var(--mut);display:block;font-size:12px}
+.wkg strong{font-size:18px;display:block;margin:2px 0}
+.wkg .sub{margin:0}
+.wka{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+dialog{background:var(--bg);color:var(--tx);border:1px solid var(--ln);border-radius:20px;padding:20px;width:min(540px,92vw);font-family:inherit}
+dialog::backdrop{background:rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+dialog h2{margin:0 0 12px;font-size:20px}
+dialog label{display:block;margin:12px 0 4px;font-size:14px;color:var(--mut)}
+dialog textarea{width:100%;background:transparent;color:var(--tx);border:1px solid var(--ln);border-radius:10px;padding:8px 10px;font:inherit;resize:vertical}
+.dact{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap}
+.msg{font-size:13px;color:var(--mut);min-height:18px;margin-top:8px}
+button[hidden]{display:none}
+dialog select,dialog input[type=time]{background:transparent;color:var(--tx);border:1px solid var(--ln);border-radius:10px;padding:8px 10px;font:inherit}
+dialog option{color:#14122b}
+/* Modo calmo: sem movimento */
+html.calm .orb,html.calm h1,html.calm .card,html.calm .bar i:after,html.calm .hm button{animation:none !important}
+html.calm #fx{display:none}
+html.calm button:hover,html.calm .hm button:hover{transform:none}
 </style></head><body>
 <canvas id="fx"></canvas><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
 <main>
 <header><div><h1>MEU OKR • 2026 → 2028</h1><div class="sub">Faculdade • Concurso TJ-SP / INSS • Viagens • Aprendizagem contínua</div></div>
-<div class="btns"><button id="bd" class="on"></button><button id="bt">◐ Tema</button></div></header>
+<div class="btns"><button id="bd"></button><button id="bt">◐ Tema</button><button id="bc"></button><button id="ba" title="Texto maior e mais espaçado">Aa Leitura</button><button id="bl">📅 Lembrete</button><button id="bk">💾 Backup</button><button id="bi" hidden>📲 Instalar</button></div></header>
 <p class="ban" id="ban"></p>
+
+<section class="card" style="animation-delay:.1s;margin-bottom:14px;--x:var(--a)"><h3>Esta semana</h3>
+ <div class="wkg">
+  <div><small>Foco da semana</small><strong id="fc"></strong><div class="sub" id="fs"></div></div>
+  <div><small>Sequência de check-ins</small><strong id="sq"></strong><div class="sub" id="sqs"></div></div>
+  <div><small>Constância</small><strong id="cn"></strong><div class="sub" id="cns"></div></div>
+ </div>
+ <div class="wka"><button id="qk">✔ Fazer check-in da semana</button><button id="qr">📝 Revisão da semana</button></div>
+</section>
+
 <section class="g k4" id="kp"></section>
 <section class="g g2">
- <div class="card" style="animation-delay:.2s"><h3>Radar dos resultados-chave</h3><svg class="rad" id="rad" viewBox="-150 -140 300 290" width="100%"></svg></div>
- <div class="card" style="animation-delay:.3s;--x:var(--b)"><h3>Concurso • % de acertos por semana</h3><svg id="ch" viewBox="0 0 600 230" width="100%"></svg>
-  <div class="add"><input id="ai" type="number" min="0" max="100" placeholder="% de acertos da semana"><button id="ab">+ Semana</button><button id="ar">↶</button></div></div>
+ <div class="card" style="animation-delay:.2s"><h3>Radar dos resultados-chave</h3><svg class="rad" id="rad" viewBox="-175 -140 350 275" width="100%" role="img" aria-label="Radar com o progresso de cada resultado-chave"></svg></div>
+ <div class="card" style="animation-delay:.3s;--x:var(--b)"><h3>Concurso • % de acertos por semana</h3><svg id="ch" viewBox="0 0 600 230" width="100%" role="img" aria-label="Gráfico de acertos por semana"></svg>
+  <div class="sub" id="av"></div>
+  <div class="add"><input id="ai" type="number" min="0" max="100" placeholder="% de acertos da semana" aria-label="Percentual de acertos da semana"><button id="ab">+ Semana</button><button id="ar" aria-label="Desfazer última semana">↶</button></div></div>
 </section>
 <section class="card g" style="animation-delay:.35s;display:block;margin-bottom:14px"><h3>Ritmo: tempo vs. progresso</h3>
  <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center"><div><div class="big" id="dy">0</div><div class="sub">dias até 31/12/2028</div></div>
  <div style="flex:1;min-width:260px"><div class="time"><i id="tb"></i><i class="pr" id="pb"></i><span class="mk" id="mt" style="color:var(--c)"></span></div>
  <div class="row"><span>▮ Tempo decorrido</span><span style="color:var(--d)">▮ Progresso médio</span></div><div class="sub" id="dif" style="margin-top:6px"></div></div></div></section>
 <section class="g kr" id="krs"></section>
-<section class="card" style="animation-delay:.4s;--x:var(--d)"><h3>Check-ins semanais • 104 semanas (clique para marcar)</h3><div class="hm" id="hm"></div><div class="sub" style="margin-top:10px">O que funcionou → o que não funcionou → o que aprendi → o que vou ajustar.</div></section>
-<div class="foot">Seus dados ficam salvos neste navegador • Arraste os controles para atualizar</div>
+<section class="card" style="animation-delay:.4s;--x:var(--d)"><h3>Check-ins semanais • 104 semanas</h3><div class="hm" id="hm"></div><div class="sub" style="margin-top:10px">Clique numa semana para registrar a revisão: o que funcionou → o que não funcionou → o que aprendi → o que vou ajustar. O ponto marca semanas com anotação.</div></section>
+<div class="foot">Seus dados ficam salvos neste aparelho • Faça 💾 Backup de vez em quando • No iPhone: Compartilhar → Adicionar à Tela de Início</div>
 </main>
+
+<dialog id="dlg">
+ <h2 id="wt"></h2>
+ <button id="wdone"></button>
+ <label for="n1">✅ O que funcionou</label><textarea id="n1" rows="2"></textarea>
+ <label for="n2">⚠️ O que não funcionou</label><textarea id="n2" rows="2"></textarea>
+ <label for="n3">💡 O que aprendi</label><textarea id="n3" rows="2"></textarea>
+ <label for="n4">🔧 O que vou ajustar</label><textarea id="n4" rows="2"></textarea>
+ <div class="dact"><button id="wcancel">Fechar</button><button id="wsave" class="on">Salvar revisão</button></div>
+</dialog>
+
+<dialog id="dlb">
+ <h2>Backup dos seus dados</h2>
+ <div class="sub">Baixe o arquivo (ou copie o texto) e guarde no Drive ou mande para você mesma. Para restaurar, abra o arquivo ou cole o texto aqui e clique em Restaurar.</div>
+ <label for="bkt">Dados reais (texto do backup)</label>
+ <textarea id="bkt" rows="6"></textarea>
+ <div class="msg" id="bkm" role="status"></div>
+ <input type="file" id="bkf" accept=".json,application/json" hidden>
+ <div class="dact"><button id="bkx">Fechar</button><button id="bkc">Copiar texto</button><button id="bkd" class="on">⬇ Baixar arquivo</button><button id="bkp">📂 Abrir arquivo</button><button id="bkr">Restaurar deste texto</button></div>
+</dialog>
+
+<dialog id="dll">
+ <h2>Lembrete semanal</h2>
+ <div class="sub">Baixa um arquivo de calendário que se repete toda semana até 31/12/2028. Abra o arquivo no celular ou no computador para adicioná-lo ao Google Agenda ou ao Calendário.</div>
+ <label for="ldia">Dia da semana</label>
+ <select id="ldia"><option value="0" selected>Domingo</option><option value="1">Segunda-feira</option><option value="2">Terça-feira</option><option value="3">Quarta-feira</option><option value="4">Quinta-feira</option><option value="5">Sexta-feira</option><option value="6">Sábado</option></select>
+ <label for="lhora">Horário</label>
+ <input id="lhora" type="time" value="19:00">
+ <div class="msg" id="llm" role="status"></div>
+ <div class="dact"><button id="llx">Fechar</button><button id="llb" class="on">Baixar lembrete</button></div>
+</dialog>
+
 <script>
-const $=s=>document.querySelector(s),C=326.7;
+const $=s=>document.querySelector(s),C=326.7,START=new Date(2026,9,5),END=new Date(2028,11,31),DAY=864e5,WK=7*DAY;
 const KR=[['Faculdade','Concluir 100% das disciplinas','Concluir a graduação em até 2 anos',1,'2028','--a',.42],
 ['Faculdade','Entregar ≥90% das atividades no prazo','Manter constância acadêmica',.9,'Semestral','--a',.88],
 ['Concurso','Atingir ≥80% de acertos nas questões','Construir preparação competitiva',.8,'Contínuo','--b',.71],
@@ -105,21 +186,43 @@ const KR=[['Faculdade','Concluir 100% das disciplinas','Concluir a graduação e
 ['Aprendizagem','Realizar ≥80% das revisões planejadas','Aumentar retenção',.8,'Semanal','--e',.68],
 ['Viagens','Acumular 100% do orçamento definido','Viajar de forma planejada',1,'A definir','--c',.35],
 ['Planejamento','Realizar ≥90% dos check-ins semanais','Manter o sistema vivo',.9,'Semanal','--d',0]];
+const LBL=['Faculdade','Entregas','Acertos','Ciclos','Revisões','Viagens','Check-ins'];
+const DEF=()=>({demo:1,calm:null,conf:0,theme:null,
+ real:{v:Array(7).fill(0),w:Array(104).fill(0),acc:[],notes:{}},
+ dm:{v:KR.map(k=>k[6]),w:Array(104).fill(0).map((_,i)=>i<16&&i!=5&&i!=11?1:0),acc:[52,55,61,58,66,70,68,74,77,73,81,84],notes:{}}});
 let S;try{S=JSON.parse(localStorage.getItem('okr26'))}catch(e){}
-if(!S)S={demo:1,real:{v:Array(7).fill(0),w:Array(104).fill(0),acc:[]},dm:{v:KR.map(k=>k[6]),w:Array(104).fill(0).map((_,i)=>i<16&&i!=5&&i!=11?1:0),acc:[52,55,61,58,66,70,68,74,77,73,81,84]}};
+S=Object.assign(DEF(),S&&typeof S=='object'?S:{});
+S.real=Object.assign(DEF().real,S.real||{});S.dm=Object.assign(DEF().dm,S.dm||{});
 const save=()=>{try{localStorage.setItem('okr26',JSON.stringify(S))}catch(e){}};
 const cur=()=>S.demo?S.dm:S.real;
-const el=()=>S.demo?16:Math.max(0,Math.min(104,Math.floor((Date.now()-new Date(2026,9,5))/6048e5)+1));
-const prog=i=>{const c=cur();if(i==6){const e=el();return e?Math.min(1,c.w.reduce((a,b)=>a+b,0)/e/KR[6][3]):0}return Math.min(1,c.v[i]/KR[i][3])};
-const st=p=>p>=.8?['🟢 No caminho','--d']:p>=.4?['🟡 Atenção','--e']:['🔴 Ajustar','--b'];
-const P=[];for(let i=0;i<7;i++)P.push(0);
+const el=()=>S.demo?16:Math.max(0,Math.min(104,Math.floor((Date.now()-START)/WK)+1));
+const tm=()=>S.demo?.32:Math.max(0,Math.min(1,(Date.now()-START)/(END-START)));
+const calmOn=()=>S.calm==null?!!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches):!!S.calm;
+const pad=n=>String(n).padStart(2,'0');
+const fd=d=>pad(d.getDate())+'/'+pad(d.getMonth()+1);
+const wlabel=i=>{const a=new Date(START.getTime()+i*WK),b=new Date(a.getTime()+6*DAY);return fd(a)+' – '+fd(b)};
+const prog=i=>{const c=cur();if(i==6){const e=el();return e?Math.min(1,c.w.slice(0,e).reduce((a,b)=>a+b,0)/e/KR[6][3]):0}return Math.min(1,c.v[i]/KR[i][3])};
+const st=p=>p>=1?['✅ Meta batida','--d']:p>=.8?['🟢 No caminho','--d']:p>=.4?['🟡 Atenção','--e']:['🔴 Ajustar','--b'];
+const P=Array(7).fill(0);
 const KP=[['🎓 Faculdade',0,'--a'],['⚖ Concurso',2,'--b'],['✈ Viagens',5,'--c'],['✓ Check-ins',6,'--d']];
+
+function applyPrefs(){
+ const r=document.documentElement;
+ r.classList.toggle('calm',calmOn());r.classList.toggle('conf',!!S.conf);
+ if(S.theme)r.dataset.theme=S.theme;
+ $('#bc').textContent='Modo calmo: '+(calmOn()?'ligado':'desligado');$('#bc').setAttribute('aria-pressed',calmOn());
+ $('#ba').setAttribute('aria-pressed',!!S.conf);
+ $('#bd').textContent='Demonstração: '+(S.demo?'ligada':'desligada');$('#bd').setAttribute('aria-pressed',!!S.demo);
+}
+
 $('#kp').innerHTML=KP.map((k,i)=>`<div class="card kpi" style="--x:var(${k[2]});animation-delay:${i*.1}s"><div class="ring"><svg viewBox="0 0 120 120"><circle class="t" cx="60" cy="60" r="52"/><circle class="f" id="rf${i}" cx="60" cy="60" r="52" stroke-dashoffset="${C}"/></svg><b id="rv${i}">0%</b></div><div><small>${k[0]}</small><strong id="rs${i}"></strong></div></div>`).join('');
-$('#krs').innerHTML=KR.map((k,i)=>`<div class="card" style="--x:var(${k[5]});animation-delay:${.3+i*.07}s"><div class="row"><span class="tag">${k[0]}</span><span class="chip" id="cs${i}"></span></div><h4>${k[1]}</h4><div class="sub" style="margin:0">${k[2]} • prazo: ${k[4]}</div><div class="row" style="margin-top:8px"><span class="pct" id="cp${i}">0%</span><span id="cv${i}"></span></div><div class="bar"><i id="cb${i}"></i></div>${i==6?'<div class="sub">Calculado pelos check-ins marcados abaixo</div>':`<input type="range" min="0" max="100" data-i="${i}" id="sl${i}">`}</div>`).join('');
+$('#krs').innerHTML=KR.map((k,i)=>`<div class="card" style="--x:var(${k[5]});animation-delay:${.3+i*.07}s"><div class="row"><span class="tag">${k[0]}</span><span class="chip" id="cs${i}"></span></div><h4>${k[1]}</h4><div class="sub" style="margin:0">${k[2]} • prazo: ${k[4]}</div><div class="row" style="margin-top:8px"><span class="pct" id="cp${i}">0%</span><span id="cv${i}"></span></div><div class="bar"><i id="cb${i}"></i></div>${i==6?'<div class="sub">Calculado pelos check-ins marcados abaixo</div>':i==2?`<div class="slw"><input type="range" min="0" max="100" data-i="${i}" id="sl${i}" aria-label="Valor atual: ${k[1]}"><i class="mm" style="left:${k[3]*100}%"></i></div><div class="sub" id="sn${i}"></div>`:`<div class="slw"><input type="range" min="0" max="100" data-i="${i}" id="sl${i}" aria-label="Valor atual: ${k[1]}"><i class="mm" style="left:${k[3]*100}%"></i></div><div class="sub">A marca no controle mostra a meta (${Math.round(k[3]*100)}%).</div>`}</div>`).join('');
+
 const AX=i=>{const a=-Math.PI/2+i*2*Math.PI/7;return[Math.cos(a),Math.sin(a)]};
 let rh='';[.25,.5,.75,1].forEach(r=>rh+=`<polygon class="gr" points="${KR.map((_,i)=>AX(i).map(v=>(v*r*100).toFixed(1)).join(',')).join(' ')}"/>`);
-KR.forEach((k,i)=>{const[x,y]=AX(i);rh+=`<line class="gr" x1="0" y1="0" x2="${x*100}" y2="${y*100}"/><text text-anchor="middle" x="${x*122}" y="${y*118+4}">${k[0].slice(0,4)}${i==0?' 1':i==1?' 2':i==2?' 1':i==3?' 2':''}</text>`});
+KR.forEach((k,i)=>{const[x,y]=AX(i),an=x>.3?'start':x<-.3?'end':'middle';rh+=`<line class="gr" x1="0" y1="0" x2="${x*100}" y2="${y*100}"/><text text-anchor="${an}" x="${(x*112).toFixed(1)}" y="${(y*112+(y>.5?12:y<-.5?-4:4)).toFixed(1)}">${LBL[i]}</text>`});
 $('#rad').innerHTML=rh+'<polygon class="p" id="rp"/>'+KR.map((_,i)=>`<circle id="rd${i}" r="4.5" fill="var(--b)"/>`).join('');
+
 function paint(){
  KP.forEach((k,i)=>{const p=P[k[1]];$('#rf'+i).setAttribute('stroke-dashoffset',C*(1-p));$('#rv'+i).textContent=Math.round(p*100)+'%';$('#rs'+i).textContent=st(prog(k[1]))[0]});
  KR.forEach((k,i)=>{const p=P[i];$('#cb'+i).style.width=p*100+'%';$('#cp'+i).textContent=Math.round(p*100)+'%'});
@@ -128,46 +231,183 @@ function paint(){
  const a=P.reduce((x,y)=>x+y,0)/7;$('#pb').style.width=a*100+'%';
 }
 let T=[],run=0;
-function target(){T=KR.map((_,i)=>prog(i));if(!run){run=1;requestAnimationFrame(fr)}}
+function target(){T=KR.map((_,i)=>prog(i));if(calmOn()){for(let i=0;i<7;i++)P[i]=T[i];paint();return}if(!run){run=1;requestAnimationFrame(fr)}}
 function fr(){let ch=0;for(let i=0;i<7;i++){const d=T[i]-P[i];if(Math.abs(d)>.0004){P[i]+=d*.06;ch=1}else P[i]=T[i]}
  paint();if(ch)requestAnimationFrame(fr);else run=0}
-function info(){
- const c=cur();KR.forEach((k,i)=>{const p=prog(i),s=st(p),ch=$('#cs'+i);ch.textContent=s[0];ch.style.borderColor=`var(${s[1]})`;
-  const pc=i==6?(el()?c.w.reduce((a,b)=>a+b,0)/el():0):c.v[i];$('#cv'+i).textContent=`atual ${Math.round(pc*100)}% / meta ${Math.round(k[3]*100)}%`;
-  const sl=$('#sl'+i);if(sl)sl.value=Math.round(c.v[i]/k[3]*100)});
- const s0=new Date(2026,9,5),e0=new Date(2028,11,31),tm=S.demo?.32:Math.max(0,Math.min(1,(Date.now()-s0)/(e0-s0)));
- $('#tb').style.width=tm*100+'%';$('#mt').style.left=tm*100+'%';$('#mt').textContent='hoje';
- const a=T.reduce((x,y)=>x+y,0)/7,d=Math.round((a-tm)*100);
- $('#dif').textContent=d>=0?`🚀 Você está ${d} pts à frente do tempo decorrido.`:`⏳ Você está ${-d} pts atrás do tempo decorrido — hora de ajustar.`;
- const days=Math.max(0,Math.ceil((e0-Date.now())/864e5));let n=0;const t0=performance.now();
- (function cnt(t){const q=Math.min(1,(t-t0)/1600);$('#dy').textContent=Math.round(days*(1-Math.pow(1-q,3)));if(q<1)requestAnimationFrame(cnt)})(t0);
- $('#ban').textContent=S.demo?'✨ Modo demonstração: dados fictícios para você ver tudo em movimento. Desligue para usar seus dados reais (hoje 0%, como na planilha).':'Seus dados reais. Arraste os controles, marque check-ins e registre suas semanas de questões.';
- $('#bd').textContent='Demonstração: '+(S.demo?'ON':'OFF');$('#bd').className=S.demo?'on':'';
- hm();chart();
+
+let cnt0=0;
+function dayCount(){
+ const days=Math.max(0,Math.ceil((END-Date.now())/DAY));
+ if(cnt0||calmOn()){$('#dy').textContent=days;cnt0=1;return}
+ cnt0=1;const t0=performance.now();
+ (function f(t){const q=Math.min(1,(t-t0)/1600);$('#dy').textContent=Math.round(days*(1-Math.pow(1-q,3)));if(q<1)requestAnimationFrame(f)})(t0);
 }
-function hm(){const c=cur(),e=el();$('#hm').innerHTML=c.w.map((v,i)=>`<span class="${v?'d':i<e?'m':''}" data-w="${i}" title="Semana ${i+1}" style="animation-delay:${i*12}ms"></span>`).join('')}
+
+function weekCard(){
+ const c=cur(),e=el();
+ let i=e-1;if(i>=0&&!c.w[i])i--;
+ let s=0;while(i>=0&&c.w[i]){s++;i--}
+ let best=0,r2=0;for(let k=0;k<e;k++){if(c.w[k]){r2++;best=Math.max(best,r2)}else r2=0}
+ $('#sq').textContent=s+(s==1?' semana':' semanas');$('#sqs').textContent='melhor sequência: '+best;
+ const done=c.w.slice(0,e).reduce((a,b)=>a+b,0);
+ $('#cn').textContent=e?Math.round(done/e*100)+'%':'—';
+ $('#cns').textContent=e?done+' de '+e+(e==1?' semana':' semanas'):'o ciclo começa em 05/10/2026';
+ if(!S.demo&&e===0){
+  const n=Math.max(0,Math.ceil((START-Date.now())/DAY));
+  $('#fc').textContent='Começa em '+n+(n==1?' dia':' dias');
+  $('#fs').textContent='Primeiro check-in: semana de 05/10/2026.';
+ }else{
+  const t=tm();let w=0,g=9;
+  KR.forEach((k,i)=>{const p=prog(i),gap=(i==0||i==5)?p-t:p-1;if(gap<g){g=gap;w=i}});
+  if(g>=-.001){$('#fc').textContent='Tudo no ritmo 🎉';$('#fs').textContent='Mantenha a rotina desta semana.'}
+  else{$('#fc').textContent=KR[w][1];$('#fs').textContent=KR[w][0]+' • '+Math.round(prog(w)*100)+'% da meta'}
+ }
+ const q=$('#qk');q.disabled=!e;
+ q.textContent=(e&&c.w[e-1])?'✔ Check-in feito (desfazer)':'✔ Fazer check-in da semana';
+ $('#qr').disabled=!e;
+}
+
+function info(){
+ const c=cur(),t=tm();
+ KR.forEach((k,i)=>{const p=prog(i),s=st(p),ch=$('#cs'+i);ch.textContent=s[0];ch.style.borderColor=`var(${s[1]})`;
+  const pc=i==6?(el()?c.w.slice(0,el()).reduce((a,b)=>a+b,0)/el():0):c.v[i];
+  $('#cv'+i).textContent=`atual ${Math.round(pc*100)}% / meta ${Math.round(k[3]*100)}%`;
+  const sl=$('#sl'+i);if(sl){sl.value=Math.round(c.v[i]*100);sl.disabled=(i==2&&c.acc.length>0)}});
+ const sn=$('#sn2');if(sn)sn.textContent=c.acc.length?'Calculado pela média das últimas 4 semanas registradas no gráfico.':'Ou registre as semanas no gráfico e o valor será calculado sozinho.';
+ $('#tb').style.width=t*100+'%';$('#mt').style.left=t*100+'%';$('#mt').textContent='hoje';
+ const a=T.reduce((x,y)=>x+y,0)/7,d=Math.round((a-t)*100);
+ $('#dif').textContent=(!S.demo&&el()===0)?'O ciclo começa em 05/10/2026. A partir daí o ritmo aparece aqui.':d>=0?`🚀 Você está ${d} pts à frente do tempo decorrido.`:`⏳ Você está ${-d} pts atrás do tempo decorrido — hora de ajustar.`;
+ dayCount();
+ {const r=S.real,tem=r.acc.length||r.w.some(x=>x)||Object.keys(r.notes||{}).length;
+  let b=S.demo?'✨ Modo demonstração: dados fictícios para você ver tudo em movimento. Desligue para usar seus dados reais (hoje 0%, como na planilha).':'Seus dados reais. Arraste os controles, marque check-ins e registre suas semanas de questões.';
+  if(!S.demo&&tem&&(Date.now()-(S.lastBk||0))>30*DAY)b+=' 💾 Faz mais de 30 dias sem backup: clique em Backup.';
+  $('#ban').textContent=b}
+ applyPrefs();hm();chart();weekCard();
+}
+
+function hm(first){
+ const c=cur(),e=el(),h=$('#hm');
+ h.className='hm'+(first&&!calmOn()?' anim':'');
+ h.innerHTML=c.w.map((v,i)=>{
+  const cls=(v?'d ':(i<e-1?'m ':''))+(i===e-1?'now ':'')+((c.notes&&c.notes[i])?'n':'');
+  const est=v?'check-in feito':i<e-1?'sem check-in':i===e-1?'semana atual':'semana futura';
+  return `<button class="${cls.trim()}" data-w="${i}" aria-label="Semana ${i+1}, ${wlabel(i)}: ${est}" title="Semana ${i+1} • ${wlabel(i)}" style="animation-delay:${i*12}ms"></button>`}).join('');
+}
+
+let chartFirst=!calmOn();
 function chart(){
- const a=cur().acc,W=600,H=230,p=34,X=i=>p+(a.length<2?0:i*(W-2*p)/(a.length-1)),Y=v=>H-p-v/100*(H-2*p);
+ const c=cur(),a=c.acc,W=600,H=230,p=34,X=i=>p+(a.length<2?0:i*(W-2*p)/(a.length-1)),Y=v=>H-p-v/100*(H-2*p);
  let h=[0,25,50,75,100].map(v=>`<line x1="${p}" x2="${W-p}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--ln)"/><text x="4" y="${Y(v)+4}">${v}%</text>`).join('');
  h+=`<line x1="${p}" x2="${W-p}" y1="${Y(80)}" y2="${Y(80)}" stroke="var(--d)" stroke-dasharray="6 5"/><text x="${W-p-70}" y="${Y(80)-6}" style="fill:var(--d)">meta 80%</text>`;
  h+=`<defs><linearGradient id="lg"><stop offset="0" stop-color="var(--a)"/><stop offset="1" stop-color="var(--b)"/></linearGradient><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--b)" stop-opacity=".4"/><stop offset="1" stop-color="var(--b)" stop-opacity="0"/></linearGradient></defs>`;
  if(!a.length)h+=`<text x="${W/2}" y="${H/2}" text-anchor="middle" style="font-size:14px">Registre a % de acertos da semana abaixo ↓</text>`;
  else{const d=a.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
   h+=`<path class="ar" fill="url(#ag)" d="${d} L${X(a.length-1)} ${H-p} L${X(0)} ${H-p}Z"/><path class="ln" pathLength="1" d="${d}"/>`+a.map((v,i)=>`<circle class="dot" r="5" cx="${X(i)}" cy="${Y(v)}" style="animation-delay:${.4+i*.12}s"><title>Semana ${i+1}: ${v}%</title></circle>`).join('')}
- $('#ch').innerHTML=h}
-document.addEventListener('input',e=>{const i=e.target.dataset.i;if(i==null)return;cur().v[i]=e.target.value/100*KR[i][3];save();target();info()});
-$('#hm').onclick=e=>{const w=e.target.dataset.w;if(w==null)return;const c=cur();c.w[w]^=1;save();target();info()};
+ const ch=$('#ch');ch.setAttribute('class',chartFirst&&a.length?'anim':'');ch.innerHTML=h;
+ if(a.length)chartFirst=false;
+ const l=a.slice(-4);$('#av').textContent=a.length?`Média das últimas ${l.length} ${l.length==1?'semana':'semanas'}: ${Math.round(l.reduce((x,y)=>x+y,0)/l.length)}% (meta: 80%)`:'';
+}
+
+/* ── Interações ── */
+document.addEventListener('input',e=>{const i=e.target.dataset&&e.target.dataset.i;if(i==null)return;cur().v[i]=Math.max(0,Math.min(1,e.target.value/100));save();target();info()});
+$('#hm').onclick=e=>{const b=e.target.closest('button');if(!b||b.dataset.w==null)return;openWeek(+b.dataset.w)};
 $('#bd').onclick=()=>{S.demo^=1;save();target();info()};
-$('#bt').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
-const sync=()=>{const c=cur();if(c.acc.length)c.v[2]=c.acc[c.acc.length-1]/100;save();target();info()};
+$('#bt').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;S.theme=d?'light':'dark';r.dataset.theme=S.theme;save()};
+$('#bc').onclick=()=>{S.calm=calmOn()?0:1;save();applyPrefs();target();info()};
+$('#ba').onclick=()=>{S.conf=S.conf?0:1;save();applyPrefs()};
+const sync=()=>{const c=cur();if(c.acc.length){const l=c.acc.slice(-4);c.v[2]=l.reduce((x,y)=>x+y,0)/l.length/100}save();target();info()};
 $('#ab').onclick=()=>{const v=parseFloat($('#ai').value);if(isNaN(v))return;cur().acc.push(Math.max(0,Math.min(100,v)));$('#ai').value='';sync()};
 $('#ar').onclick=()=>{cur().acc.pop();sync()};
-target();info();
-const cv=$('#fx'),cx=cv.getContext('2d');let pa=[];
+$('#qk').onclick=()=>{const e=el();if(!e)return;const c=cur();c.w[e-1]^=1;save();target();info()};
+$('#qr').onclick=()=>{const e=el();if(e)openWeek(e-1)};
+
+/* ── Revisão semanal ── */
+let wkIdx=0,wkDone=0;
+function paintDone(){const b=$('#wdone');b.textContent=wkDone?'✔ Check-in feito (clique para desfazer)':'Marcar check-in como feito';b.setAttribute('aria-pressed',!!wkDone)}
+function openWeek(i){
+ wkIdx=i;const c=cur(),n=(c.notes&&c.notes[i])||{};wkDone=c.w[i]?1:0;
+ $('#wt').textContent='Semana '+(i+1)+' • '+wlabel(i);
+ ['a','b','c','d'].forEach((k,j)=>$('#n'+(j+1)).value=n[k]||'');
+ paintDone();$('#dlg').showModal();
+}
+$('#wdone').onclick=()=>{wkDone^=1;paintDone()};
+$('#wcancel').onclick=()=>$('#dlg').close();
+$('#wsave').onclick=()=>{
+ const c=cur(),n={a:$('#n1').value.trim(),b:$('#n2').value.trim(),c:$('#n3').value.trim(),d:$('#n4').value.trim()};
+ c.w[wkIdx]=wkDone?1:0;
+ if(n.a||n.b||n.c||n.d)c.notes[wkIdx]=n;else delete c.notes[wkIdx];
+ save();$('#dlg').close();target();info();
+};
+
+/* ── Backup ── */
+const okData=d=>d&&Array.isArray(d.v)&&d.v.length==7&&d.v.every(x=>typeof x=='number')&&Array.isArray(d.w)&&d.w.length==104&&Array.isArray(d.acc)&&d.acc.every(x=>typeof x=='number');
+let rc=0;
+const bmsg=t=>$('#bkm').textContent=t;
+function resetRestore(){rc=0;$('#bkr').textContent='Restaurar deste texto'}
+$('#bk').onclick=()=>{$('#bkt').value=JSON.stringify(S.real);bmsg('');resetRestore();$('#dlb').showModal()};
+$('#bkx').onclick=()=>$('#dlb').close();
+$('#dlb').addEventListener('close',resetRestore);
+$('#bkc').onclick=()=>{
+ const t=$('#bkt');t.select();S.lastBk=Date.now();save();let ok=false;try{ok=document.execCommand('copy')}catch(e){}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(()=>bmsg('Backup copiado! Cole num lugar seguro.'),()=>bmsg(ok?'Backup copiado! Cole num lugar seguro.':'Não consegui copiar sozinho. O texto está selecionado: copie manualmente.'))}
+ else bmsg(ok?'Backup copiado! Cole num lugar seguro.':'Não consegui copiar sozinho. O texto está selecionado: copie manualmente.');
+};
+$('#bkr').onclick=()=>{
+ let d;try{d=JSON.parse($('#bkt').value)}catch(e){return bmsg('Texto inválido. Cole o backup completo, do { até o }.')}
+ if(!okData(d))return bmsg('Esse texto não parece um backup deste painel.');
+ if(!rc){rc=1;$('#bkr').textContent='Confirmar: substituir meus dados';return bmsg('Isso troca os dados reais atuais pelos do backup.')}
+ S.real=Object.assign(DEF().real,d);S.demo=0;save();$('#dlb').close();target();info();
+};
+
+/* ── Arquivos: baixar/abrir backup e lembrete .ics ── */
+function baixar(nome,texto,tipo){const b=new Blob([texto],{type:tipo}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=nome;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500)}
+const hojeISO=()=>{const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())};
+$('#bkd').onclick=()=>{baixar('okr-backup-'+hojeISO()+'.json',JSON.stringify(S.real),'application/json');S.lastBk=Date.now();save();info();bmsg('Arquivo baixado. Guarde no Drive ou mande para você mesma.')};
+$('#bkp').onclick=()=>$('#bkf').click();
+$('#bkf').onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('#bkt').value=String(r.result);resetRestore();bmsg('Arquivo carregado. Agora clique em Restaurar.')};r.onerror=()=>bmsg('Não consegui ler o arquivo.');r.readAsText(f);e.target.value=''};
+
+const icsTxt=s=>s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,');
+const fold=l=>l.length<=60?l:l.match(/.{1,60}/g).join('\r\n ');
+function gerarICS(dow,hhmm){
+ const[h,m]=hhmm.split(':').map(Number);
+ const d=new Date(Math.max(Date.now(),START.getTime()));d.setHours(0,0,0,0);
+ while(d.getDay()!==dow)d.setDate(d.getDate()+1);
+ const f=x=>x.getFullYear()+pad(x.getMonth()+1)+pad(x.getDate())+'T'+pad(x.getHours())+pad(x.getMinutes())+'00';
+ const a=new Date(d);a.setHours(h,m,0,0);const b=new Date(a.getTime()+30*60000);
+ const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+ const desc='Marque o check-in da semana e registre: o que funcionou; o que não funcionou; o que aprendi; o que vou ajustar.';
+ return['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//OKR 2026-2028//PT-BR','CALSCALE:GREGORIAN','BEGIN:VEVENT',
+  'UID:okr26-semanal-'+dow+'-'+hhmm.replace(':','')+'@okr','DTSTAMP:'+stamp,'DTSTART:'+f(a),'DTEND:'+f(b),
+  'RRULE:FREQ=WEEKLY;UNTIL=20281231T235959','SUMMARY:'+icsTxt('Check-in e revisão semanal do OKR'),'DESCRIPTION:'+icsTxt(desc),
+  'BEGIN:VALARM','TRIGGER:-PT10M','ACTION:DISPLAY','DESCRIPTION:'+icsTxt('Hora do check-in semanal'),'END:VALARM','END:VEVENT','END:VCALENDAR'
+ ].map(fold).join('\r\n')+'\r\n';
+}
+$('#bl').onclick=()=>{$('#llm').textContent='';$('#dll').showModal()};
+$('#llx').onclick=()=>$('#dll').close();
+$('#llb').onclick=()=>{baixar('okr-lembrete-semanal.ics',gerarICS(+$('#ldia').value,$('#lhora').value||'19:00'),'text/calendar;charset=utf-8');$('#llm').textContent='Arquivo baixado. Abra-o para adicionar ao seu calendário.'};
+
+/* ── Instalar como app + offline ── */
+let dip=null;
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e;$('#bi').hidden=false});
+$('#bi').onclick=async()=>{if(!dip)return;dip.prompt();try{await dip.userChoice}catch(e){}dip=null;$('#bi').hidden=true};
+addEventListener('appinstalled',()=>{$('#bi').hidden=true});
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+if(navigator.storage&&navigator.storage.persist){navigator.storage.persist().catch(()=>{})}
+
+/* ── Partículas (param no modo calmo e com a aba oculta) ── */
+const cv=$('#fx'),cx=cv.getContext&&cv.getContext('2d');let pa=[];
 function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
 for(let i=0;i<60;i++)pa.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});
-(function pl(){cx.clearRect(0,0,cv.width,cv.height);const col=getComputedStyle(document.documentElement).getPropertyValue('--a').trim()||'#7c5cff';cx.fillStyle=col;cx.strokeStyle=col;
+function pl(){
+ if(!cx)return;
+ if(calmOn()||document.hidden){cx.clearRect(0,0,cv.width,cv.height);setTimeout(()=>requestAnimationFrame(pl),400);return}
+ cx.clearRect(0,0,cv.width,cv.height);const col=getComputedStyle(document.documentElement).getPropertyValue('--a').trim()||'#7c5cff';cx.fillStyle=col;cx.strokeStyle=col;
  pa.forEach((a,i)=>{a.x=(a.x+a.vx+cv.width)%cv.width;a.y=(a.y+a.vy+cv.height)%cv.height;cx.globalAlpha=.5;cx.beginPath();cx.arc(a.x,a.y,1.6,0,7);cx.fill();
   for(let j=i+1;j<pa.length;j++){const b=pa[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){cx.globalAlpha=.18*(1-d/120);cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}});
- requestAnimationFrame(pl)})();
+ requestAnimationFrame(pl);
+}
+
+/* ── Início ── */
+applyPrefs();target();info();hm(true);pl();
+setTimeout(()=>{$('#hm').classList.remove('anim')},2500);
 </script></body></html>
