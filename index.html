@@ -218,8 +218,9 @@ const wlabel=i=>fd(new Date(START.getTime()+i*WK))+' – '+fd(new Date(START.get
 let S=null;
 try{S=JSON.parse(localStorage.getItem('okr26b'))}catch(e){}
 if(!S){try{const o=JSON.parse(localStorage.getItem('okr26'));if(o&&o.real){S=Object.assign({},o.real);const d={};Object.keys(o.real.d||{}).forEach(k=>d[+k+4]=o.real.d[k]);S.d=d}}catch(e){}}
-S=Object.assign({v:Array(7).fill(0),w:[],acc:[],notes:{},d:{},nt:[],calm:0,theme:null,tab:1},S&&typeof S=='object'?S:{});
+S=Object.assign({v:Array(7).fill(0),m:Array(7).fill(null),w:[],acc:[],notes:{},d:{},nt:[],calm:0,theme:null,tab:1},S&&typeof S=='object'?S:{});
 if(!Array.isArray(S.v)||S.v.length!=7)S.v=Array(7).fill(0);
+if(!Array.isArray(S.m)||S.m.length!=7)S.m=Array(7).fill(null);
 if(!Array.isArray(S.w))S.w=[];S.w=Array.from({length:NW},(_,i)=>S.w[i]?1:0);
 if(!Array.isArray(S.acc))S.acc=[];if(!Array.isArray(S.nt))S.nt=[];
 ['notes','d'].forEach(k=>{if(!S[k]||typeof S[k]!='object')S[k]={}});
@@ -235,7 +236,7 @@ const hasD=()=>Object.keys(S.d).length>0;
 const DLT={f:6,p:2,n:-8,r:0};
 function serie(){const n=dn(),out=[],sts=[];let s=50;for(let i=0;i<n;i++){const e=S.d[i];if(i===n-1&&!e)break;const k=e&&DLT[e.s]!==undefined?e.s:'n';s=Math.max(0,Math.min(100,s+DLT[k]));out.push(s);sts.push(k)}return{out,sts}}
 function dval(){let t=0,d=0;const n=dn();for(let i=0;i<n;i++){const e=S.d[i];if(i===n-1&&!e)break;const k=e?e.s:'n';if(k==='r')continue;t++;d+=k==='f'?1:k==='p'?.5:0}return t?d/t:0}
-function cur(i){if(i==6){const e=el();return e?S.w.slice(0,e).reduce((a,b)=>a+b,0)/e:0}
+function cur(i){if(S.m[i]!=null)return S.m[i];if(i==6){const e=el();return e?S.w.slice(0,e).reduce((a,b)=>a+b,0)/e:0}
  if(i==3&&hasD())return dval();
  if(i==2&&S.acc.length){const l=S.acc.slice(-4);return l.reduce((a,b)=>a+b,0)/l.length/100}
  return S.v[i]}
@@ -244,7 +245,7 @@ const st=p=>p>=1?['✅ Meta batida','--d']:p>=.8?['🟢 No caminho','--d']:p>=.4
 
 /* ── Montagem ── */
 $('#kp').innerHTML=KP.map((k,i)=>`<div class="card kpi" style="--x:var(${k[2]})"><div class="ring"><svg viewBox="0 0 120 120"><circle class="t" cx="60" cy="60" r="52"/><circle class="f" id="rf${i}" cx="60" cy="60" r="52" stroke-dashoffset="${C}"/></svg><b id="rv${i}">0%</b></div><div><small class="sub">${k[0]}</small><strong id="rs${i}" style="display:block;font-size:17px"></strong></div></div>`).join('');
-$('#krs').innerHTML=KR.map((k,i)=>`<div class="card" style="--x:var(${k[5]})"><div class="row"><span class="tag">${k[0]}</span><span class="chip" id="cs${i}"></span></div><h4>${k[1]}</h4><div class="sub" style="margin:0">${k[2]} • prazo: ${k[4]}</div><div class="row" style="margin-top:8px"><span class="pct" id="cp${i}">0%</span><span id="cv${i}"></span></div><div class="bar"><i id="cb${i}" style="width:0"></i></div>${i==6?'<div class="sub">Calculado pelos check-ins marcados abaixo</div>':`<input type="range" min="0" max="100" data-i="${i}" id="sl${i}" aria-label="Valor atual: ${k[1]}"><div class="sub" id="sn${i}">Meta: ${Math.round(k[3]*100)}%</div>`}</div>`).join('');
+$('#krs').innerHTML=KR.map((k,i)=>`<div class="card" style="--x:var(${k[5]})"><div class="row"><span class="tag">${k[0]}</span><span class="chip" id="cs${i}"></span></div><h4>${k[1]}</h4><div class="sub" style="margin:0">${k[2]} • prazo: ${k[4]}</div><div class="row" style="margin-top:8px"><span class="pct" id="cp${i}">0%</span><span id="cv${i}"></span></div><div class="bar"><i id="cb${i}" style="width:0"></i></div><input type="range" min="0" max="100" data-i="${i}" id="sl${i}" aria-label="Valor atual: ${k[1]}"><div class="row"><span class="sub" id="sn${i}"></span>${[2,3,6].includes(i)?`<button data-auto="${i}">↺ Automático</button>`:''}</div></div>`).join('');
 
 function applyPrefs(){const r=document.documentElement;r.classList.toggle('calm',calmOn());r.dataset.theme=S.theme||'dark';
  $('#bc').textContent='Modo calmo: '+(calmOn()?'ligado':'desligado');$('#bc').setAttribute('aria-pressed',calmOn())}
@@ -255,9 +256,8 @@ function render(){
  let sum=0;
  KR.forEach((k,i)=>{const p=prog(i);sum+=p;const s=st(p);$('#cs'+i).textContent=s[0];$('#cs'+i).style.borderColor=`var(${s[1]})`;
   $('#cb'+i).style.width=p*100+'%';$('#cp'+i).textContent=Math.round(p*100)+'%';$('#cv'+i).textContent=`atual ${Math.round(cur(i)*100)}% / meta ${Math.round(k[3]*100)}%`;
-  const sl=$('#sl'+i);if(sl){sl.value=Math.round(cur(i)*100);sl.disabled=(i==2&&S.acc.length>0)||(i==3&&hasD())}});
- $('#sn2').textContent=S.acc.length?'Calculado pela média das últimas 4 semanas do gráfico.':'Ou registre as semanas no gráfico.';
- $('#sn3').textContent=hasD()?'Calculado pelo Diário TJ (feitos ÷ dias de estudo).':'Ou registre os dias na aba Diário TJ.';
+  const sl=$('#sl'+i);if(sl){sl.value=Math.round(cur(i)*100);sl.disabled=false}});
+ KR.forEach((k,i)=>{$('#sn'+i).textContent=S.m[i]!=null?'Manual • meta: '+Math.round(k[3]*100)+'%':(i==2&&S.acc.length)?'Automático (média das últimas 4 semanas)':(i==3&&hasD())?'Automático (Diário TJ)':i==6?'Automático (check-ins)':'Meta: '+Math.round(k[3]*100)+'%'});
  const t=tm(),a=sum/7,d=Math.round((a-t)*100);
  $('#tb').style.width=t*100+'%';$('#pb').style.width=a*100+'%';
  $('#dy').textContent=Math.max(0,Math.ceil((END-Date.now())/DAY));
@@ -395,7 +395,8 @@ function tab(n){S.tab=n;save();[1,2,3,4].forEach(k=>{$('#p'+k).hidden=k!=n;$('#t
 [1,2,3,4].forEach(k=>$('#t'+k).onclick=()=>tab(k));
 
 /* ── Interações do painel ── */
-document.addEventListener('input',e=>{const i=e.target.dataset&&e.target.dataset.i;if(i==null)return;S.v[i]=Math.max(0,Math.min(1,e.target.value/100));save();render()});
+document.addEventListener('input',e=>{const i=e.target.dataset&&e.target.dataset.i;if(i==null)return;S.v[i]=Math.max(0,Math.min(1,e.target.value/100));S.m[i]=S.v[i];save();render()});
+$('#krs').addEventListener('click',e=>{const b=e.target.closest('[data-auto]');if(b){S.m[+b.dataset.auto]=null;save();render()}});
 $('#bt').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;S.theme=d?'light':'dark';r.dataset.theme=S.theme;save()};
 $('#bc').onclick=()=>{S.calm=calmOn()?0:1;save();applyPrefs()};
 $('#ab').onclick=()=>{const v=parseFloat($('#ai').value);if(isNaN(v))return;S.acc.push(Math.max(0,Math.min(100,v)));$('#ai').value='';save();render()};
@@ -425,7 +426,7 @@ $('#bkf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileRe
 $('#bkr').onclick=()=>{let d;try{d=JSON.parse($('#bkt').value)}catch(e){return bmsg('Texto inválido. Cole o backup completo.')}
  if(!d||!Array.isArray(d.v)||d.v.length!=7||!Array.isArray(d.w)||!Array.isArray(d.acc))return bmsg('Esse texto não parece um backup deste painel.');
  if(!rc){rc=1;$('#bkr').textContent='Confirmar: substituir meus dados';return bmsg('Isso troca os dados atuais pelos do backup.')}
- S=Object.assign(S,d);S.w=Array.from({length:NW},(_,i)=>S.w[i]?1:0);if(!S.d||typeof S.d!='object')S.d={};if(!S.notes||typeof S.notes!='object')S.notes={};if(!Array.isArray(S.nt))S.nt=[];
+ S=Object.assign(S,d);if(!Array.isArray(S.m)||S.m.length!=7)S.m=Array(7).fill(null);S.w=Array.from({length:NW},(_,i)=>S.w[i]?1:0);if(!S.d||typeof S.d!='object')S.d={};if(!S.notes||typeof S.notes!='object')S.notes={};if(!Array.isArray(S.nt))S.nt=[];
  save();$('#dlb').close();dsel=null;render();loadDay()};
 
 
