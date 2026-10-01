@@ -1,0 +1,523 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OKR 2026 → 2028 • Cássia</title>
+<meta name="theme-color" content="#7c5cff">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f2fb;--card:rgba(255,255,255,.78);--tx:#14122b;--mut:#67647f;--ln:rgba(20,18,43,.1);--a:#7c5cff;--b:#ff5c8a;--c:#0ea5c6;--d:#10b981;--e:#f59e0b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07061a;--card:rgba(255,255,255,.06);--tx:#f2f1ff;--mut:#9b98c0;--ln:rgba(255,255,255,.11);--c:#22d3ee;--d:#34d399;--e:#fbbf24}}
+:root[data-theme="dark"]{--bg:#07061a;--card:rgba(255,255,255,.06);--tx:#f2f1ff;--mut:#9b98c0;--ln:rgba(255,255,255,.11);--c:#22d3ee;--d:#34d399;--e:#fbbf24}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;min-height:100%}
+html.conf body{zoom:1.1;line-height:1.7;letter-spacing:.02em;word-spacing:.1em}
+:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.35;z-index:0;animation:fl 18s ease-in-out infinite alternate}
+.o1{width:480px;height:480px;background:var(--a);top:-120px;left:-100px}
+.o2{width:420px;height:420px;background:var(--b);bottom:-100px;right:-80px;animation-delay:-6s}
+.o3{width:340px;height:340px;background:var(--c);top:40%;left:45%;animation-delay:-11s;opacity:.22}
+@keyframes fl{to{transform:translate(90px,70px) scale(1.25)}}
+main{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:22px 16px 40px}
+header{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-end;margin-bottom:18px}
+h1{margin:0;font-size:clamp(28px,5vw,48px);letter-spacing:-1px;background:linear-gradient(90deg,var(--a),var(--b),var(--c),var(--a));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 8s linear infinite}
+@keyframes sh{to{background-position:300%}}
+.sub{color:var(--mut);margin-top:4px;font-size:14px}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;cursor:pointer;color:var(--tx);background:var(--card);border:1px solid var(--ln);border-radius:999px;padding:8px 14px;backdrop-filter:blur(10px);transition:.25s}
+button:hover{transform:translateY(-2px);border-color:var(--a)}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+button.on,button[aria-pressed="true"]{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;border-color:transparent}
+.ban{font-size:13px;color:var(--mut);margin:0 0 14px;padding:8px 14px;border:1px dashed var(--ln);border-radius:12px}
+.g{display:grid;gap:14px;margin-bottom:14px}
+.k4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.kr{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:18px;backdrop-filter:blur(16px);position:relative;overflow:hidden;animation:up .8s both;transition:box-shadow .3s}
+.card:hover{box-shadow:0 18px 40px -18px var(--x,var(--a))}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+h3{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.kpi{display:flex;align-items:center;gap:14px}
+.ring{width:96px;height:96px;flex:none;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring .t{stroke:var(--ln)}
+.ring .f{stroke:var(--x);filter:drop-shadow(0 0 6px var(--x));stroke-dasharray:326.7}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:22px}
+.kpi small{color:var(--mut);display:block}.kpi strong{font-size:18px}
+.bar{height:10px;background:var(--ln);border-radius:9px;overflow:hidden;margin:10px 0 8px}
+.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--x),color-mix(in srgb,var(--x) 55%,#fff));position:relative;overflow:hidden}
+.bar i:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-100%);animation:sw 2.4s infinite}
+@keyframes sw{to{transform:translateX(100%)}}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:13px;color:var(--mut)}
+.chip{padding:3px 10px;border-radius:99px;font-size:12px;border:1px solid var(--ln);color:var(--tx);white-space:nowrap}
+.kr .card h4{margin:0 0 2px;font-size:16px}
+.tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--x)}
+.pct{font-size:30px;font-weight:700;color:var(--x)}
+input[type=range]{width:100%;accent-color:var(--x)}
+.slw{position:relative;padding-top:8px}
+.slw .mm{position:absolute;top:2px;width:2px;height:10px;background:var(--x);opacity:.8;transform:translateX(-1px);pointer-events:none}
+svg text{fill:var(--mut);font:11px 'Space Grotesk',sans-serif}
+.rad polygon.p{fill:var(--a);fill-opacity:.28;stroke:var(--a);stroke-width:2.5;filter:drop-shadow(0 0 8px var(--a))}
+.rad .gr{fill:none;stroke:var(--ln)}
+.add{display:flex;gap:8px;margin-top:8px}
+input,textarea,select{font:inherit;background:transparent;color:var(--tx);border:1px solid var(--ln);border-radius:10px;padding:8px 10px}
+textarea{width:100%;resize:vertical}
+.add input{flex:1;min-width:0}
+.time{position:relative;height:16px;background:var(--ln);border-radius:9px;margin:26px 0 8px}
+.time i{position:absolute;left:0;top:0;bottom:0;border-radius:9px;background:linear-gradient(90deg,var(--c),var(--a))}
+.time i.pr{background:linear-gradient(90deg,var(--d),var(--e));opacity:.95}
+.mk{position:absolute;top:-22px;font-size:11px;transform:translateX(-50%);white-space:nowrap}
+.hm{display:grid;grid-template-columns:repeat(auto-fill,minmax(22px,1fr));gap:5px}
+.hm button{padding:0;border:0;border-radius:6px;aspect-ratio:1;background:var(--ln);backdrop-filter:none;position:relative}
+.hm button.d{background:var(--d);box-shadow:0 0 10px var(--d)}
+.hm button.m{background:color-mix(in srgb,var(--b) 55%,transparent)}
+.hm button.now{outline:2px solid var(--a);outline-offset:1px}
+.hm button.n:after{content:"";position:absolute;right:2px;top:2px;width:5px;height:5px;border-radius:50%;background:var(--tx)}
+.big{font-size:clamp(30px,6vw,52px);font-weight:700}
+.foot{text-align:center;color:var(--mut);font-size:12px;margin-top:24px}
+.wkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;align-items:start}
+.wkg small{color:var(--mut);display:block;font-size:12px}
+.wkg strong{font-size:18px;display:block;margin:2px 0}
+.wka{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+dialog{background:var(--bg);color:var(--tx);border:1px solid var(--ln);border-radius:20px;padding:20px;width:min(540px,92vw);font-family:inherit}
+dialog::backdrop{background:rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+dialog h2{margin:0 0 12px;font-size:20px}
+label{display:block;margin:12px 0 4px;font-size:14px;color:var(--mut)}
+dialog option{color:#14122b}
+.dact{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap}
+.msg{font-size:13px;color:var(--mut);min-height:18px;margin-top:8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.tabs button{padding:10px 18px}
+.dnav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.dnav strong{flex:1;text-align:center;font-size:16px}
+.st{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.st button{border-radius:14px;padding:12px 8px}
+input[type=number]{width:100%}
+button.it{display:block;width:100%;text-align:left;border-radius:14px;padding:10px 12px;margin-bottom:8px}
+button.it strong{color:var(--tx);font-size:14px}
+html.calm .orb,html.calm h1,html.calm .card,html.calm .bar i:after{animation:none!important}
+html.calm #fx{display:none}
+html.calm button:hover{transform:none}
+</style></head><body>
+<canvas id="fx"></canvas><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<main>
+<header><div><h1>MEU OKR • 2026 → 2028</h1><div class="sub">Faculdade • Concurso TJ-SP / INSS • Viagens • Aprendizagem contínua</div></div>
+<div class="btns"><button id="bt">◐ Tema</button><button id="bc"></button><button id="ba">Aa Leitura</button><button id="bl">📅 Lembrete</button><button id="bk">💾 Backup</button></div></header>
+
+<nav class="tabs" aria-label="Seções">
+<button id="t1">📊 Painel</button><button id="t2">📖 Diário TJ</button><button id="t3">📝 Notas</button><button id="t4">🔎 Análise</button></nav>
+
+<div id="p1">
+<p class="ban" id="ban"></p>
+<section class="card" style="margin-bottom:14px;--x:var(--a)"><h3>Esta semana</h3>
+<div class="wkg"><div><small>Foco da semana</small><strong id="fc"></strong><div class="sub" id="fs"></div></div>
+<div><small>Sequência de check-ins</small><strong id="sq"></strong><div class="sub" id="sqs"></div></div>
+<div><small>Constância</small><strong id="cn"></strong><div class="sub" id="cns"></div></div></div>
+<div class="wka"><button id="qk"></button><button id="qr">📝 Revisão da semana</button></div>
+<div class="wka" style="align-items:center"><span class="sub" style="margin:0">Hoje:</span><span class="btns" id="qh"><button data-s="f">✅ Fiz</button><button data-s="p">🟡 Em parte</button><button data-s="n">❌ Não fiz</button><button data-s="r">🌿 Descanso</button></span></div></section>
+<section class="g k4" id="kp"></section>
+<section class="g g2">
+<div class="card"><h3>Radar dos resultados-chave</h3><svg class="rad" id="rad" viewBox="-175 -140 350 275" width="100%" role="img" aria-label="Radar de progresso"></svg></div>
+<div class="card" style="--x:var(--b)"><h3>Concurso • % de acertos por semana</h3><svg id="ch" viewBox="0 0 600 230" width="100%" role="img" aria-label="Acertos por semana"></svg><div class="sub" id="av"></div>
+<div class="add"><input id="ai" type="number" min="0" max="100" placeholder="% de acertos da semana" aria-label="Percentual de acertos"><button id="ab">+ Semana</button><button id="ar" aria-label="Desfazer última">↶</button></div></div>
+</section>
+<section class="card" style="margin-bottom:14px"><h3>Ritmo: tempo vs. progresso</h3>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center"><div><div class="big" id="dy">0</div><div class="sub">dias até 31/12/2028</div></div>
+<div><div class="big" id="pdy">—</div><div class="sub">dias até a prova <input type="date" id="pdt" aria-label="Data da prova" style="padding:4px 8px"></div></div>
+<div style="flex:1;min-width:260px"><div class="time"><i id="tb"></i><i class="pr" id="pb"></i><span class="mk" id="mt" style="color:var(--c)"></span></div>
+<div class="row"><span>▮ Tempo decorrido</span><span style="color:var(--d)">▮ Progresso médio</span></div><div class="sub" id="dif" style="margin-top:6px"></div></div></div></section>
+<section class="g kr" id="krs"></section>
+<section class="card" style="--x:var(--d)"><h3>Check-ins semanais • 118 semanas</h3><div class="hm" id="hm"></div><div class="sub" style="margin-top:10px">Clique numa semana para registrar a revisão: o que funcionou → o que não funcionou → o que aprendi → o que vou ajustar. O ponto marca semanas com anotação.</div></section>
+</div>
+
+<div id="p2" hidden>
+<section class="card" style="margin-bottom:14px;--x:var(--d)"><h3>Diário de estudo • TJ-SP</h3><div class="wkg">
+<div><small>Nível de constância</small><strong id="dnv"></strong><div class="sub" id="dnvs"></div><div class="sub" id="dnvm"></div></div>
+<div><small>Sequência estudando</small><strong id="dsq"></strong><div class="sub" id="dsqs"></div></div>
+<div><small>Dias registrados</small><strong id="dcn"></strong><div class="sub" id="dcns"></div></div>
+<div><small>Tempo de estudo</small><strong id="dmn"></strong><div class="sub" id="dmns"></div></div></div></section>
+<section class="g g2">
+<div class="card" style="--x:var(--b)"><h3>Nível de constância • sobe quando estudo, cai quando não</h3>
+<div class="btns" id="drg" style="margin-bottom:8px"><button data-r="14">14 dias</button><button data-r="30">30 dias</button><button data-r="0">Tudo</button></div>
+<svg id="dch" viewBox="0 0 600 230" width="100%" role="img" aria-label="Nível de constância"></svg><div class="sub" id="dleg"></div></div>
+<div class="card" style="--x:var(--a)"><h3>Registrar o dia</h3>
+<div class="dnav"><button id="dprev" aria-label="Dia anterior">‹</button><strong id="dlab"></strong><button id="dnext" aria-label="Próximo dia">›</button></div>
+<div class="btns" style="margin-bottom:10px"><button id="dhoje">Ir para hoje</button></div>
+<div class="st" id="dst" role="group" aria-label="Como foi o dia"><button data-s="f">✅ Fiz</button><button data-s="p">🟡 Fiz em parte</button><button data-s="n">❌ Não fiz</button><button data-s="r">🌿 Descanso</button></div>
+<label for="da">✅ O que eu fiz</label><textarea id="da" rows="3" placeholder="Ex.: 20 questões de Português"></textarea>
+<label for="db">⚠️ O que eu não fiz</label><textarea id="db" rows="3" placeholder="Ex.: não fiz as questões de Informática"></textarea>
+<label for="dm">⏱ Minutos estudados (opcional)</label><input id="dm" type="number" min="0" max="1440" inputmode="numeric">
+<div class="msg" id="dmsg" role="status"></div>
+<div class="dact"><button id="ddl">Apagar registro</button><button id="dsv" class="on">Salvar o dia</button></div></div>
+</section>
+<section class="card" style="--x:var(--e);margin-bottom:14px"><h3>⏱ Cronômetro de estudo</h3>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><div class="big" id="cr">00:00</div><div class="btns"><button id="cgo">▶ Iniciar</button><button id="csv">+ Somar ao dia de hoje</button><button id="crs">Zerar</button></div></div>
+<div class="sub" id="cmsg">Continua contando mesmo se você fechar a página. Ao somar, os minutos entram no registro de hoje.</div></section>
+<section class="card" style="--x:var(--c)"><h3>Últimos registros</h3><div id="dlist"></div><div class="sub" style="margin-top:6px">Clique num dia para ver ou editar. Dia que passou sem registro conta como "não fiz".</div></section>
+</div>
+
+<div id="p3" hidden>
+<section class="card" style="margin-bottom:14px;--x:var(--a)"><h3>Nova nota</h3>
+<label for="ntx">Anotação</label><textarea id="ntx" rows="4" placeholder="Escreva aqui: ideias, dúvidas, lembretes, planos de viagem..."></textarea>
+<label for="ntg">Etiqueta (concurso, faculdade, viagem...)</label><input id="ntg" list="tgs" maxlength="30" style="width:100%"><datalist id="tgs"><option>concurso</option><option>faculdade</option><option>viagem</option><option>estudo</option><option>ideia</option></datalist>
+<div class="msg" id="nmsg" role="status"></div>
+<div class="dact"><button id="ncx" hidden>Cancelar edição</button><button id="nsv" class="on">Salvar nota</button></div></section>
+<section class="card" style="--x:var(--c)"><h3>Minhas notas</h3><input id="nq" type="search" placeholder="🔍 Buscar por texto ou etiqueta" style="width:100%;margin-bottom:12px" aria-label="Buscar notas"><div id="nl"></div></section>
+</div>
+
+<div id="p4" hidden>
+<section class="card" style="margin-bottom:14px;--x:var(--a)"><h3>Jurimetria pessoal • seus números de estudo</h3><div class="wkg">
+<div><small>Taxa de execução</small><strong id="a1"></strong><div class="sub" id="a1s"></div></div>
+<div><small>Tendência</small><strong id="a2"></strong><div class="sub" id="a2s"></div></div>
+<div><small>Projeção do nível (30 dias)</small><strong id="a3"></strong><div class="sub" id="a3s"></div></div>
+<div><small>Horas estudadas</small><strong id="a4"></strong><div class="sub" id="a4s"></div></div></div></section>
+<section class="g g2">
+<div class="card" style="--x:var(--b)"><h3>Desempenho por dia da semana</h3><div id="awd"></div><div class="sub" id="awds"></div></div>
+<div class="card" style="--x:var(--c)"><h3>Efeito dominó • probabilidade condicional</h3><div id="adm"></div><div class="sub" id="adms"></div></div></section>
+<section class="g g2">
+<div class="card" style="--x:var(--d)"><h3>Sequências</h3><div id="asq"></div></div>
+<div class="card" style="--x:var(--e)"><h3>Motivos que mais se repetem</h3><div id="amo"></div><div class="sub" id="amos"></div></div></section>
+<section class="card" style="margin-bottom:14px;--x:var(--a)"><h3>Semana a semana (últimas 8)</h3><div id="xw"></div><div class="sub" id="xws"></div></section>
+<section class="card" style="--x:var(--a)"><h3>Leitura automática</h3><div id="ains"></div>
+<div class="sub" style="margin-top:8px">Estatística descritiva dos seus registros. Com poucos dias, é indício, não verdade. Execução: feito = 1, em parte = 0,5, não fiz = 0; descanso fica de fora.</div></section>
+</div>
+
+<div class="foot">Seus dados ficam salvos neste aparelho (celular salva no celular, computador no computador) • Use 💾 Backup para guardar ou passar dados entre aparelhos</div>
+</main>
+
+<dialog id="dlg"><h2 id="wt"></h2><button id="wdone"></button>
+<label for="n1">✅ O que funcionou</label><textarea id="n1" rows="2"></textarea>
+<label for="n2">⚠️ O que não funcionou</label><textarea id="n2" rows="2"></textarea>
+<label for="n3">💡 O que aprendi</label><textarea id="n3" rows="2"></textarea>
+<label for="n4">🔧 O que vou ajustar</label><textarea id="n4" rows="2"></textarea>
+<div class="dact"><button id="wcancel">Fechar</button><button id="wsave" class="on">Salvar revisão</button></div></dialog>
+
+<dialog id="dlb"><h2>Backup dos seus dados</h2>
+<div class="sub">Baixe o arquivo (ou copie o texto) e guarde no Drive ou mande para você mesma. Para restaurar, abra o arquivo ou cole o texto e clique em Restaurar.</div>
+<label for="bkt">Texto do backup (inclui notas)</label><textarea id="bkt" rows="6"></textarea>
+<div class="msg" id="bkm" role="status"></div><input type="file" id="bkf" accept=".json,application/json" hidden>
+<div class="dact"><button id="bkx">Fechar</button><button id="bkc">Copiar texto</button><button id="bkd" class="on">⬇ Baixar arquivo</button><button id="bkp">📂 Abrir arquivo</button><button id="bkr">Restaurar deste texto</button></div></dialog>
+
+<dialog id="dll"><h2>Lembrete semanal</h2>
+<div class="sub">Baixa um arquivo de calendário que se repete toda semana até 31/12/2028. Abra-o para adicionar ao Google Agenda ou Calendário.</div>
+<label for="ldia">Dia da semana</label>
+<select id="ldia"><option value="0" selected>Domingo</option><option value="1">Segunda-feira</option><option value="2">Terça-feira</option><option value="3">Quarta-feira</option><option value="4">Quinta-feira</option><option value="5">Sexta-feira</option><option value="6">Sábado</option></select>
+<label for="lhora">Horário</label><input id="lhora" type="time" value="19:00">
+<div class="msg" id="llm" role="status"></div>
+<div class="dact"><button id="llx">Fechar</button><button id="llb" class="on">Baixar lembrete</button></div></dialog>
+
+<script>
+const $=s=>document.querySelector(s),C=326.7,DAY=864e5,WK=7*DAY,NW=118;
+const START=new Date(2026,9,1),END=new Date(2028,11,31);
+const ND=Math.round((END-START)/DAY)+1;
+const pad=n=>String(n).padStart(2,'0'),fd=d=>pad(d.getDate())+'/'+pad(d.getMonth()+1);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const KR=[['Faculdade','Concluir 100% das disciplinas','Concluir a graduação em até 2 anos',1,'2028','--a'],
+['Faculdade','Entregar ≥90% das atividades no prazo','Manter constância acadêmica',.9,'Semestral','--a'],
+['Concurso','Atingir ≥80% de acertos nas questões','Construir preparação competitiva',.8,'Contínuo','--b'],
+['Concurso','Cumprir ≥80% dos ciclos planejados','Manter execução semanal',.8,'Semanal','--b'],
+['Aprendizagem','Realizar ≥80% das revisões planejadas','Aumentar retenção',.8,'Semanal','--e'],
+['Viagens','Acumular 100% do orçamento definido','Viajar de forma planejada',1,'A definir','--c'],
+['Planejamento','Realizar ≥90% dos check-ins semanais','Manter o sistema vivo',.9,'Semanal','--d']];
+const LBL=['Faculdade','Entregas','Acertos','Ciclos','Revisões','Viagens','Check-ins'];
+const DK=['v','w','acc','notes','d','nt','prova'];
+const DEF=()=>({calm:null,conf:0,theme:null,tab:1,lastBk:0,v:Array(7).fill(0),w:Array(NW).fill(0),acc:[],notes:{},d:{},nt:[],prova:'',tm:{run:0,acc:0}});
+let S=DEF();
+try{let r=JSON.parse(localStorage.getItem('okr26'));if(r&&typeof r=='object'){if(r.real&&typeof r.real=='object')r=Object.assign({},r,r.real);S=Object.assign(S,r)}}catch(e){}
+if(!Array.isArray(S.v)||S.v.length!=7)S.v=Array(7).fill(0);
+if(!Array.isArray(S.w))S.w=[];while(S.w.length<NW)S.w.push(0);S.w=S.w.slice(0,NW);
+if(!Array.isArray(S.acc))S.acc=[];if(!Array.isArray(S.nt))S.nt=[];if(typeof S.prova!='string')S.prova='';if(!S.tm||typeof S.tm!='object')S.tm={run:0,acc:0};
+['notes','d'].forEach(k=>{if(!S[k]||typeof S[k]!='object'||Array.isArray(S[k]))S[k]={}});
+const save=()=>{try{localStorage.setItem('okr26',JSON.stringify(S))}catch(e){}};
+const el=()=>Math.max(0,Math.min(NW,Math.floor((Date.now()-START)/WK)+1));
+const tm=()=>Math.max(0,Math.min(1,(Date.now()-START)/(END-START)));
+const calmOn=()=>S.calm==null?!!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches):!!S.calm;
+const wlabel=i=>{const a=new Date(START.getTime()+i*WK),b=new Date(a.getTime()+6*DAY);return fd(a)+' – '+fd(b)};
+const dn=()=>{const t=new Date();t.setHours(0,0,0,0);return Math.max(0,Math.min(ND,Math.round((t-START)/DAY)+1))};
+const dateOf=i=>new Date(START.getFullYear(),START.getMonth(),START.getDate()+i);
+const WD=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+const dlabel=i=>{const d=dateOf(i);return WD[d.getDay()]+', '+fd(d)+'/'+d.getFullYear()};
+const hasD=()=>Object.keys(S.d).length>0;
+function dval(){let t=0,d=0;const n=dn();for(let i=0;i<n;i++){const e=S.d[i];if(i===n-1&&!e)break;const k=e?e.s:'n';if(k==='r')continue;t++;d+=k==='f'?1:k==='p'?.5:0}return t?d/t:0}
+const DLT={f:6,p:2,n:-8,r:0};
+function serie(){const n=dn(),out=[],sts=[];let s=50;for(let i=0;i<n;i++){const e=S.d[i];if(i===n-1&&!e)break;const k=(e&&DLT[e.s]!==undefined)?e.s:'n';s=Math.max(0,Math.min(100,s+DLT[k]));out.push(s);sts.push(k)}return{out,sts}}
+const prog=i=>{if(i==6){const e=el();return e?Math.min(1,S.w.slice(0,e).reduce((a,b)=>a+b,0)/e/KR[6][3]):0}if(i==3&&hasD())return Math.min(1,dval()/KR[3][3]);return Math.min(1,S.v[i]/KR[i][3])};
+const st=p=>p>=1?['✅ Meta batida','--d']:p>=.8?['🟢 No caminho','--d']:p>=.4?['🟡 Atenção','--e']:['🔴 Ajustar','--b'];
+const P=Array(7).fill(0);
+const KP=[['🎓 Faculdade',0,'--a'],['⚖ Concurso',2,'--b'],['✈ Viagens',5,'--c'],['✓ Check-ins',6,'--d']];
+
+function applyPrefs(){const r=document.documentElement;r.classList.toggle('calm',calmOn());r.classList.toggle('conf',!!S.conf);if(S.theme)r.dataset.theme=S.theme;
+$('#bc').textContent='Modo calmo: '+(calmOn()?'ligado':'desligado');$('#bc').setAttribute('aria-pressed',calmOn());$('#ba').setAttribute('aria-pressed',!!S.conf)}
+
+$('#kp').innerHTML=KP.map((k,i)=>`<div class="card kpi" style="--x:var(${k[2]});animation-delay:${i*.1}s"><div class="ring"><svg viewBox="0 0 120 120"><circle class="t" cx="60" cy="60" r="52"/><circle class="f" id="rf${i}" cx="60" cy="60" r="52" stroke-dashoffset="${C}"/></svg><b id="rv${i}">0%</b></div><div><small>${k[0]}</small><strong id="rs${i}"></strong></div></div>`).join('');
+$('#krs').innerHTML=KR.map((k,i)=>`<div class="card" style="--x:var(${k[5]});animation-delay:${.3+i*.07}s"><div class="row"><span class="tag">${k[0]}</span><span class="chip" id="cs${i}"></span></div><h4>${k[1]}</h4><div class="sub" style="margin:0">${k[2]} • prazo: ${k[4]}</div><div class="row" style="margin-top:8px"><span class="pct" id="cp${i}">0%</span><span id="cv${i}"></span></div><div class="bar"><i id="cb${i}"></i></div>${i==6?'<div class="sub">Calculado pelos check-ins marcados abaixo</div>':`<div class="slw"><input type="range" min="0" max="100" data-i="${i}" id="sl${i}" aria-label="Valor atual: ${k[1]}"><i class="mm" style="left:${k[3]*100}%"></i></div><div class="sub" id="sn${i}">${i==2||i==3?'':'A marca no controle mostra a meta ('+Math.round(k[3]*100)+'%).'}</div>`}</div>`).join('');
+
+const AX=i=>{const a=-Math.PI/2+i*2*Math.PI/7;return[Math.cos(a),Math.sin(a)]};
+let rh='';[.25,.5,.75,1].forEach(r=>rh+=`<polygon class="gr" points="${KR.map((_,i)=>AX(i).map(v=>(v*r*100).toFixed(1)).join(',')).join(' ')}"/>`);
+KR.forEach((k,i)=>{const[x,y]=AX(i),an=x>.3?'start':x<-.3?'end':'middle';rh+=`<line class="gr" x1="0" y1="0" x2="${x*100}" y2="${y*100}"/><text text-anchor="${an}" x="${(x*112).toFixed(1)}" y="${(y*112+(y>.5?12:y<-.5?-4:4)).toFixed(1)}">${LBL[i]}</text>`});
+$('#rad').innerHTML=rh+'<polygon class="p" id="rp"/>'+KR.map((_,i)=>`<circle id="rd${i}" r="4.5" fill="var(--b)"/>`).join('');
+
+function paint(){
+KP.forEach((k,i)=>{const p=P[k[1]];$('#rf'+i).setAttribute('stroke-dashoffset',C*(1-p));$('#rv'+i).textContent=Math.round(p*100)+'%';$('#rs'+i).textContent=st(prog(k[1]))[0]});
+KR.forEach((k,i)=>{$('#cb'+i).style.width=P[i]*100+'%';$('#cp'+i).textContent=Math.round(P[i]*100)+'%'});
+const pts=KR.map((_,i)=>{const[x,y]=AX(i),r=Math.max(.04,P[i])*100;$('#rd'+i).setAttribute('cx',x*r);$('#rd'+i).setAttribute('cy',y*r);return(x*r).toFixed(1)+','+(y*r).toFixed(1)});
+$('#rp').setAttribute('points',pts.join(' '));$('#pb').style.width=P.reduce((x,y)=>x+y,0)/7*100+'%'}
+let T=[],run=0;
+function target(){T=KR.map((_,i)=>prog(i));if(calmOn()){for(let i=0;i<7;i++)P[i]=T[i];paint();return}if(!run){run=1;requestAnimationFrame(fr)}}
+function fr(){let ch=0;for(let i=0;i<7;i++){const d=T[i]-P[i];if(Math.abs(d)>.0004){P[i]+=d*.06;ch=1}else P[i]=T[i]}paint();if(ch)requestAnimationFrame(fr);else run=0}
+
+let cnt0=0;
+function dayCount(){const days=Math.max(0,Math.ceil((END-Date.now())/DAY));if(cnt0||calmOn()){$('#dy').textContent=days;cnt0=1;return}cnt0=1;const t0=performance.now();
+(function f(t){const q=Math.min(1,(t-t0)/1600);$('#dy').textContent=Math.round(days*(1-Math.pow(1-q,3)));if(q<1)requestAnimationFrame(f)})(t0)}
+
+function weekCard(){
+const e=el();let i=e-1;if(i>=0&&!S.w[i])i--;let s=0;while(i>=0&&S.w[i]){s++;i--}
+let best=0,r2=0;for(let k=0;k<e;k++){if(S.w[k]){r2++;best=Math.max(best,r2)}else r2=0}
+$('#sq').textContent=s+(s==1?' semana':' semanas');$('#sqs').textContent='melhor sequência: '+best;
+const done=S.w.slice(0,e).reduce((a,b)=>a+b,0);
+$('#cn').textContent=e?Math.round(done/e*100)+'%':'—';$('#cns').textContent=done+' de '+e+(e==1?' semana':' semanas');
+const t=tm();let w=0,g=9;KR.forEach((k,i)=>{const p=prog(i),gap=(i==0||i==5)?p-t:p-1;if(gap<g){g=gap;w=i}});
+if(g>=-.001){$('#fc').textContent='Tudo no ritmo 🎉';$('#fs').textContent='Mantenha a rotina desta semana.'}
+else{$('#fc').textContent=KR[w][1];$('#fs').textContent=KR[w][0]+' • '+Math.round(prog(w)*100)+'% da meta'}
+$('#qk').textContent=S.w[e-1]?'✔ Check-in feito (desfazer)':'✔ Fazer check-in da semana';
+const td=S.d[dn()-1];document.querySelectorAll('#qh button').forEach(b=>b.setAttribute('aria-pressed',!!td&&td.s===b.dataset.s))}
+
+function info(){
+const t=tm();
+KR.forEach((k,i)=>{const p=prog(i),s=st(p),ch=$('#cs'+i);ch.textContent=s[0];ch.style.borderColor=`var(${s[1]})`;
+const dia=(i==3&&hasD());const pc=i==6?(el()?S.w.slice(0,el()).reduce((a,b)=>a+b,0)/el():0):dia?dval():S.v[i];
+$('#cv'+i).textContent=`atual ${Math.round(pc*100)}% / meta ${Math.round(k[3]*100)}%`;
+const sl=$('#sl'+i);if(sl){sl.value=Math.round((dia?dval():S.v[i])*100);sl.disabled=(i==2&&S.acc.length>0)||dia}});
+$('#sn2').textContent=S.acc.length?'Calculado pela média das últimas 4 semanas do gráfico.':'Ou registre as semanas no gráfico e o valor será calculado sozinho.';
+$('#sn3').textContent=hasD()?'Calculado pelo Diário TJ: dias feitos ÷ dias de estudo (descanso não conta).':'Ou registre os dias no Diário TJ e o valor será calculado sozinho.';
+$('#tb').style.width=t*100+'%';$('#mt').style.left=t*100+'%';$('#mt').textContent='hoje';
+const a=T.reduce((x,y)=>x+y,0)/7,d=Math.round((a-t)*100);
+$('#dif').textContent=d>=0?`🚀 Você está ${d} pts à frente do tempo decorrido.`:`⏳ Você está ${-d} pts atrás do tempo decorrido — hora de ajustar.`;
+dayCount();
+{const pv=S.prova?new Date(S.prova+'T00:00:00'):null,dd=pv?Math.ceil((pv-Date.now())/DAY):null;$('#pdy').textContent=dd==null?'—':dd<0?'passou':dd;if(document.activeElement!==$('#pdt'))$('#pdt').value=S.prova||''}
+let b='Seus dados reais, salvos neste aparelho. O ciclo começou em 01/10/2026. Arraste os controles, marque check-ins e registre suas semanas.';
+if((S.acc.length||S.w.some(x=>x)||S.nt.length||hasD())&&(Date.now()-(S.lastBk||0))>30*DAY)b+=' 💾 Faz mais de 30 dias sem backup: clique em Backup.';
+$('#ban').textContent=b;applyPrefs();hm();chart();weekCard();diario();notas();an()}
+
+function hm(){const e=el();$('#hm').innerHTML=S.w.map((v,i)=>{
+const cls=(v?'d ':(i<e-1?'m ':''))+(i===e-1?'now ':'')+(S.notes[i]?'n':'');
+const est=v?'check-in feito':i<e-1?'sem check-in':i===e-1?'semana atual':'semana futura';
+return `<button class="${cls.trim()}" data-w="${i}" aria-label="Semana ${i+1}, ${wlabel(i)}: ${est}" title="Semana ${i+1} • ${wlabel(i)}"></button>`}).join('')}
+
+function chart(){
+const a=S.acc,W=600,H=230,p=34,X=i=>p+(a.length<2?0:i*(W-2*p)/(a.length-1)),Y=v=>H-p-v/100*(H-2*p);
+let h=[0,25,50,75,100].map(v=>`<line x1="${p}" x2="${W-p}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--ln)"/><text x="4" y="${Y(v)+4}">${v}%</text>`).join('');
+h+=`<line x1="${p}" x2="${W-p}" y1="${Y(80)}" y2="${Y(80)}" stroke="var(--d)" stroke-dasharray="6 5"/><text x="${W-p-70}" y="${Y(80)-6}" style="fill:var(--d)">meta 80%</text>`;
+h+=`<defs><linearGradient id="lg"><stop offset="0" stop-color="var(--a)"/><stop offset="1" stop-color="var(--b)"/></linearGradient></defs>`;
+if(!a.length)h+=`<text x="${W/2}" y="${H/2}" text-anchor="middle" style="font-size:14px">Registre a % de acertos da semana abaixo ↓</text>`;
+else{const d=a.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+h+=`<path d="${d}" fill="none" stroke="url(#lg)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px var(--b))"/>`+a.map((v,i)=>`<circle r="5" fill="var(--b)" cx="${X(i)}" cy="${Y(v)}"><title>Semana ${i+1}: ${v}%</title></circle>`).join('')}
+$('#ch').innerHTML=h;const l=a.slice(-4);
+$('#av').textContent=a.length?`Média das últimas ${l.length} ${l.length==1?'semana':'semanas'}: ${Math.round(l.reduce((x,y)=>x+y,0)/l.length)}% (meta: 80%)`:''}
+
+/* Diário */
+const cut=s=>s.length>140?s.slice(0,140)+'…':s;
+const fmtMin=m=>m>=60?Math.floor(m/60)+' h '+pad(m%60)+' min':m+' min';
+const DCOL={f:'--d',p:'--e',n:'--b',r:'--mut'};
+let drng=30,dsel=null,dst=null;
+function diario(){
+const n=dn(),r=serie(),out=r.out,sts=r.sts;
+const last=out.length?out[out.length-1]:50,lvl=Math.round(last),prev=out.length>7?out[out.length-8]:50,df=Math.round(last-prev);
+$('#dnv').textContent=lvl+' / 100';
+$('#dnvs').textContent=(df>0?'📈 subiu '+df+' pts':df<0?'📉 caiu '+(-df)+' pts':'➖ estável')+(out.length>7?' nos últimos 7 dias':' desde o início');
+$('#dnvm').textContent=lvl>=70?'Em ritmo forte.':lvl>=40?'Segurando o ritmo.':'Hora de retomar, um passo de cada vez.';
+let sq=0;for(let i=sts.length-1;i>=0;i--){if(sts[i]==='r')continue;if(sts[i]==='n')break;sq++}
+$('#dsq').textContent=sq+(sq==1?' dia':' dias');$('#dsqs').textContent='seguidos (descanso não quebra a sequência)';
+const ct={f:0,p:0,n:0,r:0};sts.forEach(k=>ct[k]++);
+$('#dcn').textContent=ct.f+(ct.f==1?' dia feito':' dias feitos');$('#dcns').textContent=ct.p+' em parte • '+ct.n+' não feitos • '+ct.r+' descansos';
+let mi=0;for(let i=Math.max(0,n-7);i<n;i++){const e=S.d[i];if(e&&e.m)mi+=e.m}
+$('#dmn').textContent=mi?fmtMin(mi):'0 min';$('#dmns').textContent='nos últimos 7 dias';
+dchart();dlist()}
+
+function dchart(){
+const r=serie(),all=[50].concat(r.out),sa=[null].concat(r.sts),W=600,H=230,p=34;
+const len=drng?Math.min(all.length,drng+1):all.length,off=all.length-len,pts=all.slice(off),ss=sa.slice(off);
+const X=i=>pts.length<2?W/2:p+i*(W-2*p)/(pts.length-1),Y=v=>H-p-v/100*(H-2*p);
+let h=[0,25,50,75,100].map(v=>`<line x1="${p}" x2="${W-p}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--ln)"/><text x="4" y="${Y(v)+4}">${v}</text>`).join('');
+h+=`<line x1="${p}" x2="${W-p}" y1="${Y(50)}" y2="${Y(50)}" stroke="var(--mut)" stroke-dasharray="3 5" opacity=".6"/><text x="${W-p-86}" y="${Y(50)-6}">ponto de partida</text>`;
+h+=`<defs><linearGradient id="dlg" gradientUnits="userSpaceOnUse" x1="${p}" y1="0" x2="${W-p}" y2="0"><stop offset="0" stop-color="var(--a)"/><stop offset="1" stop-color="var(--d)"/></linearGradient></defs>`;
+if(!r.out.length)h+=`<text x="${W/2}" y="${H/2-20}" text-anchor="middle" style="font-size:14px">Registre o primeiro dia ao lado →</text>`;
+else{const d=pts.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+h+=`<path d="${d}" fill="none" stroke="url(#dlg)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px var(--d))"/>`;
+if(pts.length<=46)h+=pts.map((v,j)=>j===0?'':`<circle r="5" cx="${X(j).toFixed(1)}" cy="${Y(v).toFixed(1)}" fill="var(${DCOL[ss[j]]})"><title>${esc(dlabel(off+j-1))}: ${Math.round(v)}</title></circle>`).join('')}
+$('#dch').innerHTML=h;document.querySelectorAll('#drg button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.r===drng));
+$('#dleg').textContent='🟢 fiz (+6) • 🟡 em parte (+2) • 🔴 não fiz ou sem registro (−8) • ⚪ descanso (0). O gráfico começa em 50.'}
+
+function dlist(){
+const n=dn(),IC={f:'✅',p:'🟡',n:'❌',r:'🌿'},NM={f:'Fiz',p:'Em parte',n:'Não fiz',r:'Descanso'};let h='';
+for(let i=n-1;i>=Math.max(0,n-10);i--){const e=S.d[i],s=e&&NM[e.s]?e.s:(i===n-1?null:'n');
+h+=`<button class="it" data-d="${i}"><div class="row"><strong>${s?IC[s]:'⏳'} ${esc(dlabel(i))}</strong><span class="chip">${s?NM[s]:'ainda sem registro'}${e&&e.m?' • '+fmtMin(e.m):''}</span></div>`
++(e&&e.a?`<div class="sub">✅ ${esc(cut(e.a))}</div>`:'')+(e&&e.b?`<div class="sub">⚠️ ${esc(cut(e.b))}</div>`:'')+(!e&&s==='n'?'<div class="sub">Sem registro: conta como "não fiz".</div>':'')+`</button>`}
+$('#dlist').innerHTML=h}
+
+function paintSt(){document.querySelectorAll('#dst button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s===dst))}
+function loadDay(){const n=dn();if(dsel==null||dsel>n-1)dsel=Math.max(0,n-1);
+const e=S.d[dsel]||{};dst=e.s||null;$('#dlab').textContent=dlabel(dsel)+(dsel===n-1?' • hoje':'');
+$('#da').value=e.a||'';$('#db').value=e.b||'';$('#dm').value=e.m||'';$('#dprev').disabled=dsel<=0;$('#dnext').disabled=dsel>=n-1;paintSt();$('#dmsg').textContent=''}
+$('#dst').onclick=e=>{const b=e.target.closest('button');if(!b)return;dst=b.dataset.s;paintSt()};
+$('#dprev').onclick=()=>{if(dsel>0){dsel--;loadDay()}};
+$('#dnext').onclick=()=>{if(dsel<dn()-1){dsel++;loadDay()}};
+$('#dhoje').onclick=()=>{dsel=Math.max(0,dn()-1);loadDay()};
+$('#drg').onclick=e=>{const b=e.target.closest('button');if(!b)return;drng=+b.dataset.r;dchart()};
+$('#dlist').onclick=e=>{const b=e.target.closest('button');if(!b)return;dsel=+b.dataset.d;loadDay();$('#dlab').scrollIntoView({block:'center',behavior:calmOn()?'auto':'smooth'})};
+$('#dsv').onclick=()=>{if(!dst){$('#dmsg').textContent='Escolha como foi o dia: Fiz, Fiz em parte, Não fiz ou Descanso.';return}
+const m=parseInt($('#dm').value,10);S.d[dsel]={s:dst,a:$('#da').value.trim(),b:$('#db').value.trim(),m:isNaN(m)||m<0?0:Math.min(m,1440)};save();target();info();$('#dmsg').textContent='Dia salvo ✔'};
+$('#ddl').onclick=()=>{if(!S.d[dsel]){$('#dmsg').textContent='Esse dia ainda não tem registro.';return}
+delete S.d[dsel];save();target();info();loadDay();$('#dmsg').textContent='Registro apagado.'};
+
+/* Notas */
+let nedit=null;
+function notas(){const q=$('#nq').value.trim().toLowerCase();
+const L=S.nt.filter(n=>!q||(n.t+' '+n.g).toLowerCase().includes(q)).sort((a,b)=>(b.p?1:0)-(a.p?1:0)||b.u-a.u);
+$('#nl').innerHTML=L.length?L.map(n=>`<div class="card" style="--x:var(--a);margin-bottom:10px;animation:none"><div class="row"><span>${n.p?'📌 ':''}${n.g?`<span class="chip">${esc(n.g)}</span>`:''}</span><span>${new Date(n.u).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})}</span></div><div style="white-space:pre-wrap;margin:8px 0">${esc(n.t)}</div><div class="btns"><button data-a="p" data-id="${n.id}">${n.p?'Desafixar':'📌 Fixar'}</button><button data-a="e" data-id="${n.id}">✏️ Editar</button><button data-a="x" data-id="${n.id}">🗑 Apagar</button></div></div>`).join(''):'<div class="sub">'+(q?'Nenhuma nota encontrada.':'Nenhuma nota ainda. Escreva a primeira acima.')+'</div>'}
+function nreset(){nedit=null;$('#ntx').value='';$('#ntg').value='';$('#ncx').hidden=true;$('#nsv').textContent='Salvar nota'}
+$('#nsv').onclick=()=>{const t=$('#ntx').value.trim();if(!t){$('#nmsg').textContent='Escreva algo antes de salvar.';return}
+const g=$('#ntg').value.trim();
+if(nedit!=null){const n=S.nt.find(x=>x.id===nedit);if(n){n.t=t;n.g=g;n.u=Date.now()}}else S.nt.push({id:Date.now(),t,g,p:0,u:Date.now()});
+save();nreset();$('#nmsg').textContent='Nota salva ✔';notas()};
+$('#ncx').onclick=()=>{nreset();$('#nmsg').textContent=''};
+$('#nq').oninput=notas;
+$('#nl').onclick=e=>{const b=e.target.closest('button');if(!b)return;const id=+b.dataset.id,n=S.nt.find(x=>x.id===id);if(!n)return;
+if(b.dataset.a==='p'){n.p=n.p?0:1;save();notas()}
+else if(b.dataset.a==='e'){nedit=id;$('#ntx').value=n.t;$('#ntg').value=n.g;$('#ncx').hidden=false;$('#nsv').textContent='Atualizar nota';$('#nmsg').textContent='Editando nota.';$('#ntx').scrollIntoView({block:'center'});$('#ntx').focus()}
+else if(b.dataset.a==='x'&&confirm('Apagar esta nota? Não dá para desfazer.')){S.nt=S.nt.filter(x=>x.id!==id);if(nedit===id)nreset();save();notas()}};
+
+/* Análise */
+const SC={f:1,p:.5,n:0},cap=s=>s[0].toUpperCase()+s.slice(1);
+const rate=a=>a.length?a.reduce((s,x)=>s+SC[x.k],0)/a.length:null;
+const pcv=v=>v==null?'—':Math.round(v*100)+'%';
+const brr=(l,v,n,col,r)=>`<div class="row" style="margin-top:8px"><span>${l}</span><span>${r||pcv(v)+(n!=null?' • '+n+' dias':'')}</span></div><div class="bar" style="margin:4px 0"><i style="--x:var(${col});width:${v==null?0:Math.round(v*100)}%"></i></div>`;
+const STOP=new Set('para,porque,pois,mais,muito,minha,mesmo,quando,estava,fazer,estudar,estudei,consegui,ficou,ainda,hoje,ontem,sobre,depois,antes,tinha,fiquei,todas,todos,nada'.split(','));
+function an(){
+const R=serie(),sts=R.sts,out=R.out,n=sts.length;
+const all=sts.map((k,i)=>({k,i,m:(S.d[i]&&S.d[i].m)||0,w:dateOf(i).getDay()})),act=all.filter(x=>x.k!=='r'),ins=[];
+$('#a1').textContent=pcv(rate(act));$('#a1s').textContent=act.length+' dias de estudo analisados';
+const rl=rate(act.slice(-14)),rp=rate(act.slice(-28,-14));
+if(rl!=null&&rp!=null){const d=Math.round((rl-rp)*100);$('#a2').textContent=d>0?'📈 +'+d+' pts':d<0?'📉 '+d+' pts':'➖ estável';$('#a2s').textContent='últimos 14 dias vs. 14 anteriores';
+ins.push(d>=5?'Você está melhorando: a execução dos últimos 14 dias subiu '+d+' pts.':d<=-5?'Atenção: a execução caiu '+(-d)+' pts nos últimos 14 dias. Vale reduzir a meta diária e voltar ao básico.':'Seu ritmo está estável nas últimas semanas.')}
+else{$('#a2').textContent='—';$('#a2s').textContent='precisa de ~28 dias de estudo'}
+if(n){const last=out[n-1],dl=(last-out[Math.max(0,n-15)])/Math.min(14,n),pj=Math.max(0,Math.min(100,Math.round(last+dl*30)));$('#a3').textContent=pj+' / 100';$('#a3s').textContent='nível hoje: '+Math.round(last)+' • se mantiver o ritmo recente'}
+else{$('#a3').textContent='—';$('#a3s').textContent=''}
+const tot=all.reduce((s,x)=>s+x.m,0),fe=all.filter(x=>x.m>0);
+$('#a4').textContent=tot?(tot/60).toFixed(1).replace('.',',')+' h':'0 h';$('#a4s').textContent=fe.length?'média de '+Math.round(tot/fe.length)+' min nos dias com minutos':'registre os minutos para ver a média';
+let h='',best=null,worst=null;
+for(let d=0;d<7;d++){const a=act.filter(x=>x.w===d),v=rate(a);h+=brr(cap(WD[d]),v,a.length,'--b');if(a.length>=3){if(!best||v>best.v)best={d,v};if(!worst||v<worst.v)worst={d,v}}}
+$('#awd').innerHTML=h;$('#awds').textContent=best?'Melhor: '+WD[best.d]+' ('+pcv(best.v)+') • Mais fraco: '+WD[worst.d]+' ('+pcv(worst.v)+')':'Precisa de pelo menos 3 registros por dia da semana.';
+if(best&&worst&&best.d!==worst.d&&best.v-worst.v>=.15)ins.push('Seu pior dia é '+WD[worst.d]+' ('+pcv(worst.v)+'). Planeje uma meta menor nesse dia; '+WD[best.d]+' é o melhor para conteúdo pesado.');
+let a1=0,a2=0,b1=0,b2=0;
+for(let i=1;i<act.length;i++){const ok=act[i].k==='f'||act[i].k==='p',pv=act[i-1].k==='f'||act[i-1].k==='p';if(pv){a1++;if(ok)a2++}else{b1++;if(ok)b2++}}
+const pa=a1?a2/a1:null,pb=b1?b2/b1:null;
+$('#adm').innerHTML=brr('Estudo hoje, se estudei antes',pa,a1,'--d')+brr('Estudo hoje, se falhei antes',pb,b1,'--b');
+$('#adms').textContent=(pa!=null&&pb!=null)?'Diferença: '+Math.round((pa-pb)*100)+' pts. '+(pa-pb>=.15?'Falhar um dia aumenta o risco de falhar de novo.':'Falhar um dia pouco muda o dia seguinte.'):'Precisa de dias de estudo e de falha para comparar.';
+if(pa!=null&&pb!=null&&pa-pb>=.15)ins.push('Efeito dominó: depois de um dia falho, sua chance de estudar cai de '+pcv(pa)+' para '+pcv(pb)+'. Regra de ouro: nunca falhe dois dias seguidos (nem que seja 10 minutos).');
+let bs=0,bm=0,cs=0,cm=0;act.forEach(x=>{if(x.k==='f'||x.k==='p'){cs++;cm=0;bs=Math.max(bs,cs)}else{cm++;cs=0;bm=Math.max(bm,cm)}});
+$('#asq').innerHTML=`<div class="big">${bs}</div><div class="sub">maior sequência estudando (dias)</div><div class="big" style="margin-top:10px;color:var(--b)">${bm}</div><div class="sub">maior sequência sem estudar (dias)</div>`;
+const cnt={};let nb=0;
+Object.keys(S.d).forEach(i=>{const t=(S.d[i].b||'').toLowerCase();if(!t)return;nb++;(t.match(/[a-zà-ú]{5,}/g)||[]).forEach(w=>{if(!STOP.has(w))cnt[w]=(cnt[w]||0)+1})});
+const top=Object.entries(cnt).sort((x,y)=>y[1]-x[1]).slice(0,5);
+$('#amo').innerHTML=top.length?top.map(t=>`<div class="row" style="margin-top:6px"><span>${esc(t[0])}</span><span class="chip">${t[1]}×</span></div>`).join(''):'<div class="sub">Preencha "O que eu não fiz" no Diário para ver os padrões.</div>';
+$('#amos').textContent=nb?'Baseado em '+nb+' registros com "não fiz".':'';
+const W=[];for(let w=0;w*7<n;w++){let s=0,k=0,m=0;for(let i=w*7;i<Math.min(n,w*7+7);i++){m+=(S.d[i]&&S.d[i].m)||0;if(sts[i]!=='r'){k++;s+=SC[sts[i]]}}W.push({w,v:k?s/k:null,m})}
+const L=W.slice(-8);
+$('#xw').innerHTML=L.length?L.map((x,j)=>{const pv=j?L[j-1]:(W.length>8?W[W.length-9]:null),d=(x.v!=null&&pv&&pv.v!=null)?Math.round((x.v-pv.v)*100):null;
+return brr('Sem '+(x.w+1)+' • '+wlabel(x.w),x.v,null,'--a',pcv(x.v)+(d==null?'':d>0?' ▲'+d:d<0?' ▼'+(-d):' ➖')+(x.m?' • '+fmtMin(x.m):''))}).join(''):'<div class="sub">Sem dados ainda.</div>';
+$('#xws').textContent='▲▼ = variação em pontos vs. a semana anterior.';
+if(act.length<14)ins.unshift('Poucos dados ('+act.length+' dias): continue registrando; a análise fica confiável a partir de ~30 dias.');
+if(!ins.length)ins.push('Sem alertas por enquanto. Continue registrando todos os dias.');
+$('#ains').innerHTML=ins.map(t=>`<div class="sub" style="margin:6px 0;color:var(--tx)">• ${esc(t)}</div>`).join('')}
+
+/* Abas */
+function tab(n){S.tab=n;save();for(let i=1;i<=4;i++){$('#p'+i).hidden=n!=i;$('#t'+i).setAttribute('aria-pressed',n==i)}
+if(n==2){diario();loadDay()}if(n==3)notas();if(n==4)an()}
+[1,2,3,4].forEach(i=>$('#t'+i).onclick=()=>tab(i));
+
+/* Interações */
+document.addEventListener('input',e=>{const i=e.target.dataset&&e.target.dataset.i;if(i==null)return;S.v[i]=Math.max(0,Math.min(1,e.target.value/100));save();target();info()});
+$('#hm').onclick=e=>{const b=e.target.closest('button');if(!b||b.dataset.w==null)return;openWeek(+b.dataset.w)};
+$('#bt').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;S.theme=d?'light':'dark';r.dataset.theme=S.theme;save()};
+$('#bc').onclick=()=>{S.calm=calmOn()?0:1;save();applyPrefs();target();info()};
+$('#ba').onclick=()=>{S.conf=S.conf?0:1;save();applyPrefs()};
+const sync=()=>{if(S.acc.length){const l=S.acc.slice(-4);S.v[2]=l.reduce((x,y)=>x+y,0)/l.length/100}save();target();info()};
+$('#ab').onclick=()=>{const v=parseFloat($('#ai').value);if(isNaN(v))return;S.acc.push(Math.max(0,Math.min(100,v)));$('#ai').value='';sync()};
+$('#ar').onclick=()=>{S.acc.pop();sync()};
+$('#qk').onclick=()=>{const e=el();if(!e)return;S.w[e-1]^=1;save();target();info()};
+$('#qr').onclick=()=>openWeek(Math.max(0,el()-1));
+
+/* Revisão semanal */
+let wkIdx=0,wkDone=0;
+function paintDone(){const b=$('#wdone');b.textContent=wkDone?'✔ Check-in feito (clique para desfazer)':'Marcar check-in como feito';b.setAttribute('aria-pressed',!!wkDone)}
+function openWeek(i){wkIdx=i;const n=S.notes[i]||{};wkDone=S.w[i]?1:0;$('#wt').textContent='Semana '+(i+1)+' • '+wlabel(i);
+['a','b','c','d'].forEach((k,j)=>$('#n'+(j+1)).value=n[k]||'');paintDone();$('#dlg').showModal()}
+$('#wdone').onclick=()=>{wkDone^=1;paintDone()};
+$('#wcancel').onclick=()=>$('#dlg').close();
+$('#wsave').onclick=()=>{const n={a:$('#n1').value.trim(),b:$('#n2').value.trim(),c:$('#n3').value.trim(),d:$('#n4').value.trim()};
+S.w[wkIdx]=wkDone?1:0;if(n.a||n.b||n.c||n.d)S.notes[wkIdx]=n;else delete S.notes[wkIdx];save();$('#dlg').close();target();info()};
+
+/* Backup */
+const dataOnly=()=>{const o={};DK.forEach(k=>o[k]=S[k]);return o};
+const okData=d=>d&&Array.isArray(d.v)&&d.v.length==7&&d.v.every(x=>typeof x=='number')&&Array.isArray(d.w)&&Array.isArray(d.acc)&&d.acc.every(x=>typeof x=='number');
+let rc=0;const bmsg=t=>$('#bkm').textContent=t;
+function resetRestore(){rc=0;$('#bkr').textContent='Restaurar deste texto'}
+function baixar(nome,texto,tipo){const b=new Blob([texto],{type:tipo}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=nome;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500)}
+const hojeISO=()=>{const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())};
+$('#bk').onclick=()=>{$('#bkt').value=JSON.stringify(dataOnly());bmsg('');resetRestore();$('#dlb').showModal()};
+$('#bkx').onclick=()=>$('#dlb').close();
+$('#dlb').addEventListener('close',resetRestore);
+$('#bkc').onclick=()=>{const t=$('#bkt');t.select();S.lastBk=Date.now();save();let ok=false;try{ok=document.execCommand('copy')}catch(e){}
+if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t.value).then(()=>bmsg('Backup copiado! Cole num lugar seguro.'),()=>bmsg(ok?'Backup copiado!':'Não consegui copiar sozinho. O texto está selecionado: copie manualmente.'));
+else bmsg(ok?'Backup copiado!':'Não consegui copiar sozinho. O texto está selecionado: copie manualmente.')};
+$('#bkd').onclick=()=>{baixar('okr-backup-'+hojeISO()+'.json',JSON.stringify(dataOnly()),'application/json');S.lastBk=Date.now();save();info();bmsg('Arquivo baixado. Guarde no Drive ou mande para você mesma.')};
+$('#bkp').onclick=()=>$('#bkf').click();
+$('#bkf').onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('#bkt').value=String(r.result);resetRestore();bmsg('Arquivo carregado. Agora clique em Restaurar.')};r.onerror=()=>bmsg('Não consegui ler o arquivo.');r.readAsText(f);e.target.value=''};
+$('#bkr').onclick=()=>{let d;try{d=JSON.parse($('#bkt').value)}catch(e){return bmsg('Texto inválido. Cole o backup completo, do { até o }.')}
+if(d&&d.real&&typeof d.real=='object')d=d.real;
+if(!okData(d))return bmsg('Esse texto não parece um backup deste painel.');
+if(!rc){rc=1;$('#bkr').textContent='Confirmar: substituir meus dados';return bmsg('Isso troca os dados atuais pelos do backup.')}
+const f=DEF();DK.forEach(k=>{if(d[k]!==undefined)f[k]=d[k]});
+while(f.w.length<NW)f.w.push(0);f.w=f.w.slice(0,NW);
+['notes','d'].forEach(k=>{if(!f[k]||typeof f[k]!='object'||Array.isArray(f[k]))f[k]={}});if(!Array.isArray(f.nt))f.nt=[];
+DK.forEach(k=>S[k]=f[k]);save();$('#dlb').close();dsel=null;target();info();loadDay()};
+
+/* Lembrete .ics */
+const icsTxt=s=>s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,');
+const fold=l=>l.length<=60?l:l.match(/.{1,60}/g).join('\r\n ');
+function gerarICS(dow,hhmm){const[h,m]=hhmm.split(':').map(Number);const d=new Date(Math.max(Date.now(),START.getTime()));d.setHours(0,0,0,0);while(d.getDay()!==dow)d.setDate(d.getDate()+1);
+const f=x=>x.getFullYear()+pad(x.getMonth()+1)+pad(x.getDate())+'T'+pad(x.getHours())+pad(x.getMinutes())+'00';
+const a=new Date(d);a.setHours(h,m,0,0);const b=new Date(a.getTime()+30*60000);
+const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+return['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//OKR 2026-2028//PT-BR','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:okr26-semanal-'+dow+'-'+hhmm.replace(':','')+'@okr','DTSTAMP:'+stamp,'DTSTART:'+f(a),'DTEND:'+f(b),'RRULE:FREQ=WEEKLY;UNTIL=20281231T235959','SUMMARY:'+icsTxt('Check-in e revisão semanal do OKR'),'DESCRIPTION:'+icsTxt('Marque o check-in da semana e registre: o que funcionou; o que não funcionou; o que aprendi; o que vou ajustar.'),'BEGIN:VALARM','TRIGGER:-PT10M','ACTION:DISPLAY','DESCRIPTION:'+icsTxt('Hora do check-in semanal'),'END:VALARM','END:VEVENT','END:VCALENDAR'].map(fold).join('\r\n')+'\r\n'}
+$('#bl').onclick=()=>{$('#llm').textContent='';$('#dll').showModal()};
+$('#llx').onclick=()=>$('#dll').close();
+$('#llb').onclick=()=>{baixar('okr-lembrete-semanal.ics',gerarICS(+$('#ldia').value,$('#lhora').value||'19:00'),'text/calendar;charset=utf-8');$('#llm').textContent='Arquivo baixado. Abra-o para adicionar ao seu calendário.'};
+
+/* Prova, registro rápido e cronômetro */
+$('#pdt').onchange=e=>{S.prova=e.target.value;save();info()};
+$('#qh').onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=dn()-1,o=S.d[i]||{};S.d[i]=Object.assign({a:'',b:'',m:0},o,{s:b.dataset.s});save();target();info();if(dsel===i)loadDay()};
+const crMs=()=>S.tm.acc+(S.tm.run?Date.now()-S.tm.run:0);
+function crt(){const t=Math.floor(crMs()/1000),h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=t%60;$('#cr').textContent=(h?h+':'+pad(m):pad(m))+':'+pad(s);$('#cgo').textContent=S.tm.run?'⏸ Pausar':(S.tm.acc?'▶ Continuar':'▶ Iniciar')}
+$('#cgo').onclick=()=>{if(S.tm.run){S.tm.acc+=Date.now()-S.tm.run;S.tm.run=0}else S.tm.run=Date.now();save();crt()};
+$('#crs').onclick=()=>{S.tm={run:0,acc:0};save();crt();$('#cmsg').textContent='Cronômetro zerado.'};
+$('#csv').onclick=()=>{const mn=Math.round(crMs()/60000);if(mn<1){$('#cmsg').textContent='Estude pelo menos 1 minuto para somar.';return}
+const i=dn()-1,e=S.d[i]||{s:'f',a:'',b:'',m:0};e.m=Math.min(1440,(e.m||0)+mn);S.d[i]=e;S.tm={run:0,acc:0};save();crt();target();info();if(dsel===i)loadDay();$('#cmsg').textContent='+'+mn+' min somados a hoje ✔'};
+setInterval(crt,1000);crt();
+if(navigator.storage&&navigator.storage.persist){navigator.storage.persist().catch(()=>{})}
+
+/* Partículas */
+const cv=$('#fx'),cx=cv.getContext&&cv.getContext('2d'),pa=[];
+function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<60;i++)pa.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});
+function pl(){if(!cx)return;
+if(calmOn()||document.hidden){cx.clearRect(0,0,cv.width,cv.height);setTimeout(()=>requestAnimationFrame(pl),400);return}
+cx.clearRect(0,0,cv.width,cv.height);const col=getComputedStyle(document.documentElement).getPropertyValue('--a').trim()||'#7c5cff';cx.fillStyle=col;cx.strokeStyle=col;
+pa.forEach((a,i)=>{a.x=(a.x+a.vx+cv.width)%cv.width;a.y=(a.y+a.vy+cv.height)%cv.height;cx.globalAlpha=.5;cx.beginPath();cx.arc(a.x,a.y,1.6,0,7);cx.fill();
+for(let j=i+1;j<pa.length;j++){const b=pa[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){cx.globalAlpha=.18*(1-d/120);cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}});
+requestAnimationFrame(pl)}
+
+applyPrefs();target();info();pl();
+tab([1,2,3,4].includes(S.tab)?S.tab:1);
+</script>
+</body></html>
